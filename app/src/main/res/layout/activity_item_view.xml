@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cravings.ItemView">
+
+    <!--
+
+    What needs to be on the item view page:
+        Restaurant Name (bold biggest text on the screen) -> Linked to restaurant view
+        Image View (circular: loaded from database, default icon otherwise e.g. fork/knife)
+        Item Name (bold but smaller than the Restaurant Name) -> Links nowhere
+        Rating (items actual rating and clickable to add your own rating) (should be next to Item Name)
+        Price (next to rating)
+        Description (not bold, slightly smaller than the Item Name, wrapped text) -> Click unwraps text
+        Dietary Info (bold, same size as description) -> Goes nowhere
+
+    -->
+
+    <TextView
+        android:id="@+id/tvItemViewRestaurantName"
+        android:layout_centerHorizontal="true"
+        style="@style/TitleTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tvItemViewImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/sonicburger"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvItemViewRestaurantName"/>
+
+    <LinearLayout
+        android:id="@+id/ll_item_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvItemViewImage">
+
+        <TextView
+            android:id="@+id/tvItemViewTitle"
+            style="@style/SubTitleTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvItemViewPrice"
+            style="@style/SubTitleTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/rbItemViewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ll_item_info"/>
+
+    <TextView
+        android:id="@+id/tvItemViewDescription"
+        style="@style/NormalTextTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rbItemViewRating"/>
+
+    <TextView
+        android:id="@+id/tvItemViewTags"
+        style="@style/NormalTextThemeBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvItemViewDescription"/>
+
+</RelativeLayout>

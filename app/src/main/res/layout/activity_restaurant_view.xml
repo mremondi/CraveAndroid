@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cravings.RestaurantView">
+
+    <!--
+
+    What needs to be on the restaurant view page:
+        Map View (top look at restaurant view of VURB)
+        Restaurant Name (bold biggest text on the screen, overlayed on map ideally)
+        Menu recyclerview (clickable on all of them, bold big text) -> Menu View
+        Tags (not clickable) not bold small text
+        Overall rating (not clickable)
+        Address
+        Website URL
+        Price (in $$/$$$$)
+    -->
+
+    <TextView
+        android:id="@+id/tvRestViewRestaurantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        style="@style/TitleTheme"
+        />
+
+    <LinearLayout
+        android:id="@+id/rv_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/tvRestViewRestaurantName">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewRestView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:background="#6b6b6b" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvRestViewTags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rv_container"/>
+
+    <RatingBar
+        android:id="@+id/rbRestViewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRestViewTags"/>
+
+    <RatingBar
+        android:id="@+id/rbRestViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rbRestViewRating"/>
+
+    <TextView
+        android:id="@+id/tvRestViewAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rbRestViewPrice"/>
+
+    <TextView
+        android:id="@+id/tvRestViewURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvRestViewAddress"/>
+
+
+</RelativeLayout>
