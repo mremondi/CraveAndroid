@@ -67,7 +67,6 @@ public class SearchFragment extends Fragment {
                     public void onResponse(Call<List<MenuItem>> call, Response<List<MenuItem>> response) {
                         if (response.body() == null){}
                         else {
-                            Log.d("RESPONSE", "" + response.body().toString());
                             SearchAdapter searchAdapter = new SearchAdapter(response.body(), getContext(),
                                     new SearchAdapter.OnItemClickListener(){
                                         @Override

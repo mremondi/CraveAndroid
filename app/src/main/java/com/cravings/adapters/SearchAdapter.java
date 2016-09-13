@@ -48,12 +48,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     public static class ViewHolder extends RecyclerView.ViewHolder  {
         private String objectID;
-        private TextView tvItemName;
+        private TextView tvSearchRowItemName;
+        private TextView tvSearchRowItemPrice;
+        private TextView tvSearchRowItemRating;
+        private TextView tvSearchItemDescription;
         private Context context;
 
         public ViewHolder(View itemView, Context context) {
             super(itemView);
-            tvItemName = (TextView) itemView.findViewById(R.id.tvItemName);
+            tvSearchRowItemName = (TextView) itemView.findViewById(R.id.tvSearchRowItemName);
+            tvSearchRowItemPrice = (TextView) itemView.findViewById(R.id.tvSearchRowPrice);
+            tvSearchRowItemRating = (TextView) itemView.findViewById(R.id.tvSearchRowRating);
+            tvSearchItemDescription = (TextView) itemView.findViewById(R.id.tvItemViewDescription);
             this.context = context;
         }
 
@@ -61,8 +67,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             this.objectID = id;
         }
 
-        public void bind(final ModelObject item, final OnItemClickListener listener){
-            tvItemName.setText(item.getName());
+        public void bind(final MenuItem item, final OnItemClickListener listener){
+            tvSearchRowItemName.setText(item.getName());
+            tvSearchItemDescription.setText(item.getDescription());
+            tvSearchRowItemPrice.setText("$" + item.getPrice());
+            tvSearchRowItemRating.setText("" + item.getRating());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,7 +79,5 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 }
             });
         }
-
-
     }
 }
