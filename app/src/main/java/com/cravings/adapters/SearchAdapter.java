@@ -59,7 +59,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             tvSearchRowItemName = (TextView) itemView.findViewById(R.id.tvSearchRowItemName);
             tvSearchRowItemPrice = (TextView) itemView.findViewById(R.id.tvSearchRowPrice);
             tvSearchRowItemRating = (TextView) itemView.findViewById(R.id.tvSearchRowRating);
-            tvSearchItemDescription = (TextView) itemView.findViewById(R.id.tvItemViewDescription);
+            tvSearchItemDescription = (TextView) itemView.findViewById(R.id.tvSearchRowItemDescription);
             this.context = context;
         }
 
@@ -71,7 +71,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             tvSearchRowItemName.setText(item.getName());
             tvSearchItemDescription.setText(item.getDescription());
             tvSearchRowItemPrice.setText("$" + item.getPrice());
-            tvSearchRowItemRating.setText("" + item.getRating());
+            tvSearchRowItemRating.setText("" + item.getRating() + "/5");
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

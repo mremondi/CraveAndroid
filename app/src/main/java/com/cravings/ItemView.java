@@ -14,6 +14,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
+// TODO: INCLUDE BOTTOM BAR HERE: it has to be initialized in the code...
+
 public class ItemView extends AppCompatActivity {
 
     String restaurant_id;
@@ -47,15 +50,21 @@ public class ItemView extends AppCompatActivity {
                 else {
                     tvItemViewRestaurantName.setText(""+ response.body().getRestaurant_name());
                     tvItemViewTitle.setText("" + response.body().getName());
-                    tvItemViewPrice.setText("" + response.body().getPrice());
+                    tvItemViewPrice.setText("$" + response.body().getPrice());
                     tvItemViewDescription.setText("" + response.body().getDescription());
                     tvItemViewTags.setText("" + response.body().getDietaryInfo());
+                    rbItemViewRating.setRating(response.body().getRating());
                     restaurant_id = response.body().getRestaurantID();
                 }
             }
-
             @Override
-            public void onFailure(Call<MenuItem> call, Throwable t) {
+            public void onFailure(Call<MenuItem> call, Throwable t) { }
+        });
+
+        rbItemViewRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                // TODO: POST to API and update item rating and increment number of ratings
             }
         });
 

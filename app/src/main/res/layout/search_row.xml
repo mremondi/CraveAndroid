@@ -44,10 +44,8 @@
             android:id="@+id/tvSearchRowItemDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DESCRIPTION HERE"/>
+            android:lines="1"
+            android:ellipsize="end"/>
 
     </LinearLayout>
-
-
-
 </LinearLayout>
