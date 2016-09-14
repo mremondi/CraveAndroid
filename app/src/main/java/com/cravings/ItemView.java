@@ -21,6 +21,7 @@ public class ItemView extends AppCompatActivity {
 
     String restaurant_id;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,8 @@ public class ItemView extends AppCompatActivity {
         final RatingBar rbItemViewRating = (RatingBar) findViewById(R.id.rbItemViewRating);
         final TextView tvItemViewDescription = (TextView) findViewById(R.id.tvItemViewDescription);
         final TextView tvItemViewTags = (TextView) findViewById(R.id.tvItemViewTags);
+
+
 
         Intent intent = getIntent();
         String objectID = intent.getStringExtra("OBJECT ID");

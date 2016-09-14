@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Cravings</string>
+
+    <string-array name="filter_choices">
+        <item>Price: Low -> High</item>
+        <item>Price: High -> Low</item>
+        <item>Nearby</item>
+        <item>Rating</item>
+    </string-array>
 </resources>

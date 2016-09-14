@@ -9,14 +9,13 @@ import android.widget.TextView;
 
 import com.cravings.R;
 import com.cravings.data.MenuItem;
-import com.cravings.data.ModelObject;
 import java.util.List;
 
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
 
     public interface OnItemClickListener {
-        void onClick(ModelObject item);
+        void onClick(MenuItem item);
     }
 
 

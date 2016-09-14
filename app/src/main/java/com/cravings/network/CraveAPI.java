@@ -20,7 +20,7 @@ public interface CraveAPI {
     Call<Restaurant> getRestaurantById(@Path("id") String id);
 
     @GET("restaurants/search/{query}")
-    Call<Restaurant> searchRestaurants(@Path("query") String query);
+    Call<List<Restaurant>> searchRestaurants(@Path("query") String query);
 
     @GET("menus")
     Call<Menu> getMenus();
@@ -39,6 +39,10 @@ public interface CraveAPI {
 
     @GET("items/search/{query}")
     Call<List<MenuItem>> searchItems(@Path("query") String query);
+
+    @GET("items/search/{query}/{filter}")
+    Call<List<MenuItem>> searchItemsSorted(@Path("query") String query, @Path("filter") String filter);
+
 
     @GET("items/search/{menu_id}")
     Call<List<MenuItem>> searchForMenuItems(@Path("menu_id") String menu_id);

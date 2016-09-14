@@ -5,6 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/tvSearchFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TitleTheme"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,8 +25,15 @@
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go"/>
+            android:text="Search"/>
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Spinner>
 
     <LinearLayout
         android:layout_width="match_parent"
