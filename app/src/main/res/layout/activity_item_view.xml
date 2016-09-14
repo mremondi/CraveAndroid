@@ -61,12 +61,13 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <RatingBar
-        android:id="@+id/rbItemViewRating"
+
+    <TextView
+        android:id="@+id/tvItemViewDescriptionLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:theme="@style/RatingBar"
+        style="@style/NormalTextThemeBold"
+        android:text="Description:"
         android:layout_below="@+id/ll_item_info"/>
 
     <TextView
@@ -74,13 +75,30 @@
         style="@style/NormalTextTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rbItemViewRating"/>
+        android:layout_below="@+id/tvItemViewDescriptionLabel" />
+
+    <TextView
+        android:id="@+id/tvItemViewTagsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/NormalTextThemeBold"
+        android:text="Dietary Information:"
+        android:layout_below="@+id/tvItemViewDescription"/>
 
     <TextView
         android:id="@+id/tvItemViewTags"
-        style="@style/NormalTextThemeBold"
+        style="@style/NormalTextTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvItemViewDescription"/>
+        android:layout_below="@+id/tvItemViewTagsLabel"/>
+
+    <RatingBar
+        android:id="@+id/rbItemViewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/RatingBar" />
+
 
 </RelativeLayout>

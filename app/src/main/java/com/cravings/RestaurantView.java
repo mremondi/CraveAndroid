@@ -63,11 +63,12 @@ public class RestaurantView extends AppCompatActivity {
 
 
 //                     TODO: getting the menu names...
-//
 //                     other way
 //                     use the object ids to get the menu names... where though
-//                    I think the best way to do it is to store a two value
-//                    pair in the restaurant object.... tough to keep updated but probably the best way
+                    // what I will do:::;
+                        // create a list of menu Ids
+                    // then after those are populated....
+                    // do another query of menus
 
 
                     MenuRecyclerViewAdapter searchAdapter = new MenuRecyclerViewAdapter(response.body().getMenus(), getApplicationContext(),

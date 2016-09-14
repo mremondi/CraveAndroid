@@ -27,15 +27,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        style="@style/TitleTheme"
-        />
+        style="@style/TitleTheme" />
+
+    <TextView
+        android:id="@+id/tvRestViewMenuNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/NormalTextThemeBold"
+        android:layout_below="@+id/tvRestViewRestaurantName"
+        android:text="MENUS:"/>
 
     <LinearLayout
         android:id="@+id/rv_container"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/tvRestViewRestaurantName">
+        android:layout_below="@+id/tvRestViewMenuNameLabel">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerViewRestView"
@@ -75,6 +82,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvRestViewAddress"/>
-
 
 </RelativeLayout>

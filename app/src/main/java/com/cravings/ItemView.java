@@ -52,7 +52,11 @@ public class ItemView extends AppCompatActivity {
                     tvItemViewTitle.setText("" + response.body().getName());
                     tvItemViewPrice.setText("$" + response.body().getPrice());
                     tvItemViewDescription.setText("" + response.body().getDescription());
-                    tvItemViewTags.setText("" + response.body().getDietaryInfo());
+                    StringBuilder sb = new StringBuilder();
+                    for(String tag: response.body().getDietaryInfo()){
+                        sb.append(tag);
+                    }
+                    tvItemViewTags.setText(sb.toString().trim());
                     rbItemViewRating.setRating(response.body().getRating());
                     restaurant_id = response.body().getRestaurantID();
                 }
