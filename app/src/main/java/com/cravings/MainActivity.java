@@ -41,48 +41,7 @@ public class MainActivity extends AppCompatActivity {
         craveLocationManager = new CraveLocationManager(this);
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
-        mBottomBar.noNavBarGoodness();
-        mBottomBar.setItems(R.menu.bottombar_menu);
-        mBottomBar.setDefaultTabPosition(2);
-        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
-            @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    // go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    showFragment(NearMeFragment.TAG);
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    showFragment(SearchFragment.TAG);
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
-                }
-            }
-
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    //go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    // go to search fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    // go to near me fragment
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
-                }
-            }
-        });
+        setUpBottomBar();
         requestNeededPermission();
     }
 
@@ -147,5 +106,50 @@ public class MainActivity extends AppCompatActivity {
         trans.replace(R.id.main_frame_content, fragment, tag);
         trans.addToBackStack(null);
         trans.commit();
+    }
+
+    public void setUpBottomBar(){
+        mBottomBar.noNavBarGoodness();
+        mBottomBar.setItems(R.menu.bottombar_menu);
+        mBottomBar.setDefaultTabPosition(2);
+        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
+            @Override
+            public void onMenuTabSelected(@IdRes int menuItemId) {
+                if (menuItemId == R.id.nav_bar_featured) {
+                    // go to featured fragment
+                }
+                else if(menuItemId == R.id.nav_bar_near_me) {
+                    showFragment(NearMeFragment.TAG);
+                }
+                else if(menuItemId == R.id.nav_bar_search) {
+                    showFragment(SearchFragment.TAG);
+                }
+                else if (menuItemId == R.id.nav_bar_favorites) {
+                    // go to favorites fragments
+                }
+                else if (menuItemId == R.id.nav_bar_profile) {
+                    // go to profile fragment
+                }
+            }
+
+            @Override
+            public void onMenuTabReSelected(@IdRes int menuItemId) {
+                if (menuItemId == R.id.nav_bar_featured) {
+                    //go to featured fragment
+                }
+                else if(menuItemId == R.id.nav_bar_search) {
+                    // go to search fragment
+                }
+                else if(menuItemId == R.id.nav_bar_near_me) {
+                    // go to near me fragment
+                }
+                else if (menuItemId == R.id.nav_bar_favorites) {
+                    // go to favorites fragments
+                }
+                else if (menuItemId == R.id.nav_bar_profile) {
+                    // go to profile fragment
+                }
+            }
+        });
     }
 }

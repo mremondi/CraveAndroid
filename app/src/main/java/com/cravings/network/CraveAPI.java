@@ -6,6 +6,8 @@ import com.cravings.data.Restaurant;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 
@@ -18,6 +20,10 @@ public interface CraveAPI {
 
     @GET("restaurants/{id}")
     Call<Restaurant> getRestaurantById(@Path("id") String id);
+
+    @GET("restaurants/{latitude}/{longitude}")
+    Call<List<Restaurant>> getNearbyRestaurants(@Path("latitude") Double lat, @Path("longitude") Double lon);
+
 
     @GET("restaurants/search/{query}")
     Call<List<Restaurant>> searchRestaurants(@Path("query") String query);
@@ -33,6 +39,9 @@ public interface CraveAPI {
 
     @GET("items")
     Call<List<MenuItem>> getItems();
+
+    @PUT("items/{id}/{rating}")
+    Call<MenuItem> rateItem(@Path("id") String id, @Path("rating") float rating);
 
     @GET("items/{id}")
     Call<MenuItem> getItemById(@Path("id") String id);

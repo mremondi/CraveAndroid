@@ -7,13 +7,20 @@ public class Restaurant extends ModelObject{
     private String _id;
     private String restaurant;
     private String description;
-    private float[] coord;
+    private Loc loc;
     private String address;
     private String zipcode;
     private String[] tags;
     private String[] menus;
     private String restaurant_URL;
 
+    public Loc getLoc() {
+        return loc;
+    }
+
+    public void setLoc(Loc geometry) {
+        this.loc = geometry;
+    }
 
     @Override
     public String getObjectID() {
@@ -38,14 +45,6 @@ public class Restaurant extends ModelObject{
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public float[] getCoord() {
-        return coord;
-    }
-
-    public void setCoord(float[] coord) {
-        this.coord = coord;
     }
 
     public String getAddress() {

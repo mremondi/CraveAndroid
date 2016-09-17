@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.cravings.R;
 import com.cravings.data.MenuItem;
 import java.util.List;
@@ -70,7 +69,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             tvSearchRowItemName.setText(item.getName());
             tvSearchItemDescription.setText(item.getDescription());
             tvSearchRowItemPrice.setText("$" + item.getPrice());
-            tvSearchRowItemRating.setText("" + item.getRating() + "/5");
+            if (Float.isNaN(item.getRating() / item.getNumberOfRatings()) ){
+                tvSearchRowItemRating.setText("No Ratings");
+            }
+            tvSearchRowItemRating.setText("" + item.getRating() / item.getNumberOfRatings() + "/5");
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

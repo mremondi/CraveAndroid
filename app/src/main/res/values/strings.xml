@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cravings</string>
+    <string name="app_name">Crave</string>
 
     <string-array name="filter_choices">
         <item>Price: Low -> High</item>

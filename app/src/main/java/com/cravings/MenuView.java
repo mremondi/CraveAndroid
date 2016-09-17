@@ -1,6 +1,7 @@
 package com.cravings;
 
 import android.content.Intent;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +14,9 @@ import com.cravings.adapters.MenuRecyclerViewAdapter;
 import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
 import com.cravings.network.CraveAPI;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnMenuTabClickListener;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,10 +28,16 @@ public class MenuView extends AppCompatActivity {
 
     TextView testContent;
 
+    private BottomBar mBottomBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_view);
+
+
+        mBottomBar = BottomBar.attach(this, savedInstanceState);
+        setUpBottomBar();
 
         testContent = (TextView) findViewById(R.id.test_content);
 
@@ -82,5 +92,56 @@ public class MenuView extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<MenuItem>> call, Throwable t) { Log.d("HERE in fail", t.toString());}
         });
+    }
+
+    public void setUpBottomBar(){
+        mBottomBar.noNavBarGoodness();
+        mBottomBar.setItems(R.menu.bottombar_menu);
+        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
+            @Override
+            public void onMenuTabSelected(@IdRes int menuItemId) {
+                if (menuItemId == R.id.nav_bar_featured) {
+                    // go to featured fragment
+                }
+                else if(menuItemId == R.id.nav_bar_near_me) {
+
+                }
+                else if(menuItemId == R.id.nav_bar_search) {
+
+                }
+                else if (menuItemId == R.id.nav_bar_favorites) {
+
+                }
+                else if (menuItemId == R.id.nav_bar_profile) {
+
+                }
+            }
+
+            @Override
+            public void onMenuTabReSelected(@IdRes int menuItemId) {
+                if (menuItemId == R.id.nav_bar_featured) {
+                    //go to featured fragment
+                }
+                else if(menuItemId == R.id.nav_bar_search) {
+                    // go to search fragment
+                }
+                else if(menuItemId == R.id.nav_bar_near_me) {
+                    // go to near me fragment
+                }
+                else if (menuItemId == R.id.nav_bar_favorites) {
+                    // go to favorites fragments
+                }
+                else if (menuItemId == R.id.nav_bar_profile) {
+                    // go to profile fragment
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        mBottomBar.onSaveInstanceState(outState);
     }
 }
