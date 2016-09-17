@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.FrameLayout;
 import com.cravings.adapters.CraveLocationManager;
 import com.cravings.fragments.FavoritesFragment;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE_LOCATION_PERMISSION = 401;
 
+    public static final String FRAGMENT_TAG = "FRAGMENT_TAG";
+
     CraveLocationManager craveLocationManager;
 
     private FrameLayout layoutContent;
@@ -36,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         layoutContent = (FrameLayout) findViewById(R.id.main_frame_content);
-        showFragment(SearchFragment.TAG);
+
+        // display the given fragment
+        if(getIntent().getStringExtra("FRAGMENT_TAG") != null){
+            showFragment(getIntent().getStringExtra(FRAGMENT_TAG));
+        }
+        else {
+            showFragment(SearchFragment.TAG);
+        }
 
         craveLocationManager = new CraveLocationManager(this);
 
@@ -84,19 +94,19 @@ public class MainActivity extends AppCompatActivity {
     private void showFragment(String tag) {
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(tag);
         if (fragment == null) {
-            if (tag == SearchFragment.TAG) {
+            if (tag.equals(SearchFragment.TAG)) {
                 fragment = new SearchFragment();
             }
-            else if (tag == FeaturedFragment.TAG) {
+            else if (tag.equals(FeaturedFragment.TAG)) {
                 fragment = new FeaturedFragment();
             }
-            else if (tag == FavoritesFragment.TAG) {
+            else if (tag.equals(FavoritesFragment.TAG)) {
                 fragment = new FavoritesFragment();
             }
-            else if (tag == NearMeFragment.TAG) {
+            else if (tag.equals(NearMeFragment.TAG)) {
                 fragment = new NearMeFragment();
             }
-            else if (tag == ProfileFragment.TAG) {
+            else if (tag.equals(ProfileFragment.TAG)) {
                 fragment = new ProfileFragment();
             }
         }

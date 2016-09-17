@@ -36,7 +36,10 @@
         </activity>
         <activity android:name=".ItemView" />
         <activity android:name=".RestaurantView" />
-        <activity android:name=".MenuView"></activity>
+        <activity android:name=".MenuView" />
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

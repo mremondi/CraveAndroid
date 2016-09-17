@@ -8,15 +8,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
-
 import com.cravings.adapters.MenuItemRecyclerAdapter;
-import com.cravings.adapters.MenuRecyclerViewAdapter;
 import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
+import com.cravings.fragments.NearMeFragment;
+import com.cravings.fragments.SearchFragment;
 import com.cravings.network.CraveAPI;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
-
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -104,10 +103,14 @@ public class MenuView extends AppCompatActivity {
                     // go to featured fragment
                 }
                 else if(menuItemId == R.id.nav_bar_near_me) {
-
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
+                    startActivity(i);
                 }
                 else if(menuItemId == R.id.nav_bar_search) {
-
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, SearchFragment.TAG);
+                    startActivity(i);
                 }
                 else if (menuItemId == R.id.nav_bar_favorites) {
 

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import com.cravings.data.MenuItem;
+import com.cravings.fragments.NearMeFragment;
+import com.cravings.fragments.SearchFragment;
 import com.cravings.network.CraveAPI;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
@@ -124,10 +126,14 @@ public class ItemView extends AppCompatActivity {
                     // go to featured fragment
                 }
                 else if(menuItemId == R.id.nav_bar_near_me) {
-
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
+                    startActivity(i);
                 }
                 else if(menuItemId == R.id.nav_bar_search) {
-
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, SearchFragment.TAG);
+                    startActivity(i);
                 }
                 else if (menuItemId == R.id.nav_bar_favorites) {
 

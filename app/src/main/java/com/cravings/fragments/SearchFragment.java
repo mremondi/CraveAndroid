@@ -139,6 +139,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
                                                 i.putExtra("RESTAURANT ID", restaurant.getObjectID());
                                                 Log.d("RESTAURANT ID", restaurant.getObjectID());
                                                 startActivity(i);
+                                                getActivity().finish();
                                             }
                                         });
                                 searchRecyclerView.setAdapter(searchRestaurantAdapter);
