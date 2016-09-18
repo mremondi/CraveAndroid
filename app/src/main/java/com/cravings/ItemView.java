@@ -1,6 +1,7 @@
 package com.cravings;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -81,13 +82,16 @@ public class ItemView extends AppCompatActivity {
             public void onFailure(Call<MenuItem> call, Throwable t) { }
         });
 
-        //TODO: COMMENTED OUT CSRF stuff in web app. Need to put that back in and still have this work
         if (rbItemViewRating != null) {
             rbItemViewRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+
+                SharedPreferences prefs = getSharedPreferences("UserData", 0);
+                String user_id = prefs.getString("user_id", "");
+
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     if (fromUser) {
-                        Call<MenuItem> putRating = craveAPI.rateItem(objectID, rating);
+                        Call<MenuItem> putRating = craveAPI.rateItem(objectID, rating, user_id);
                         putRating.enqueue(new Callback<MenuItem>() {
                             @Override
                             public void onResponse(Call<MenuItem> call, Response<MenuItem> response) {

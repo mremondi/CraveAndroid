@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     showFragment(SearchFragment.TAG);
                 }
                 else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
+                    showFragment(FavoritesFragment.TAG);
                 }
                 else if (menuItemId == R.id.nav_bar_profile) {
                     // go to profile fragment

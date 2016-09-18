@@ -6,12 +6,21 @@ package com.cravings.data;
 public class User {
 
     private String email;
+    private String _id;
     private String password;
     private String facebook;
     private String google;
     private String instagram;
     private String[] tokens;
     private Profile profile;
+
+    public String getId(){
+        return _id;
+    }
+
+    public void setId(String id){
+        this._id = id;
+    }
 
     public String getEmail() {
         return email;

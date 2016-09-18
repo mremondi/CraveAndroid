@@ -2,9 +2,15 @@ package com.cravings.network;
 
 import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
+import com.cravings.data.Rating;
 import com.cravings.data.Restaurant;
+import com.cravings.data.User;
+
 import java.util.List;
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -40,8 +46,8 @@ public interface CraveAPI {
     @GET("items")
     Call<List<MenuItem>> getItems();
 
-    @PUT("items/{id}/{rating}")
-    Call<MenuItem> rateItem(@Path("id") String id, @Path("rating") float rating);
+    @PUT("items/{id}/{rating}/{user_id}")
+    Call<MenuItem> rateItem(@Path("id") String id, @Path("rating") float rating, @Path("user_id") String user_id);
 
     @GET("items/{id}")
     Call<MenuItem> getItemById(@Path("id") String id);
@@ -52,7 +58,14 @@ public interface CraveAPI {
     @GET("items/search/{query}/{filter}")
     Call<List<MenuItem>> searchItemsSorted(@Path("query") String query, @Path("filter") String filter);
 
-
     @GET("items/search/{menu_id}")
     Call<List<MenuItem>> searchForMenuItems(@Path("menu_id") String menu_id);
+
+    @FormUrlEncoded
+    @POST("login")
+    Call<User> loginUser(@Field("email") String email, @Field(value = "password", encoded = true) String password);
+
+    @GET("ratings/{user_id}")
+    Call<List<Rating>> getUserFavorites(@Path("user_id") String user_id);
+
 }
