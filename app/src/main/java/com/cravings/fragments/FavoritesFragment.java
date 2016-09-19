@@ -1,14 +1,21 @@
 package com.cravings.fragments;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cravings.ItemView;
 import com.cravings.R;
+import com.cravings.adapters.FavoritesAdapter;
+import com.cravings.adapters.SearchAdapter;
 import com.cravings.data.MenuItem;
 import com.cravings.data.Rating;
 import com.cravings.network.CraveAPI;
@@ -32,6 +39,11 @@ public class FavoritesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.favorites_fragment, null, false);
 
+
+        final RecyclerView favoritesRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv_favorites);
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+        favoritesRecyclerView.setLayoutManager(linearLayoutManager);
+
         // GET CURRENT USER ID
         SharedPreferences prefs = getActivity().getSharedPreferences("UserData", 0);
         String user_id = prefs.getString("user_id", "");
@@ -47,12 +59,20 @@ public class FavoritesFragment extends Fragment {
         ratingQuery.enqueue(new Callback<List<Rating>>() {
             @Override
             public void onResponse(Call<List<Rating>> call, Response<List<Rating>> response) {
+                Log.d("FAVORITES RESPONSE: ", response.body().toString());
+                FavoritesAdapter favoritesAdapter = new FavoritesAdapter(response.body(), getContext(),
+                        new FavoritesAdapter.OnItemClickListener() {
+                            @Override
+                            public void onClick(Rating rating) {
 
+                            }
+                        });
+                favoritesRecyclerView.setAdapter(favoritesAdapter);
             }
 
             @Override
             public void onFailure(Call<List<Rating>> call, Throwable t) {
-
+                Log.d("FAILURE", t.getMessage());
             }
         });
                 // USE THE RATINGS TO GET EACH ITEM WITH THE CURRENT USER'S RATING
