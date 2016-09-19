@@ -64,7 +64,9 @@ public class FavoritesFragment extends Fragment {
                         new FavoritesAdapter.OnItemClickListener() {
                             @Override
                             public void onClick(Rating rating) {
-
+                                Intent i = new Intent(getActivity(), ItemView.class);
+                                i.putExtra("OBJECT ID", rating.getItemID());
+                                startActivity(i);
                             }
                         });
                 favoritesRecyclerView.setAdapter(favoritesAdapter);

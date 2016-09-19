@@ -65,16 +65,6 @@ public class RestaurantView extends AppCompatActivity {
                     tvRestViewAddress.setText("" + response.body().getAddress());
                     tvRestViewURL.setText("" + response.body().getRestaurant_URL());
 
-
-//                     TODO: getting the menu names...
-//                     other way
-//                     use the object ids to get the menu names... where though
-                    // what I will do:::;
-                        // create a list of menu Ids
-                    // then after those are populated....
-                    // do another query of menus
-
-
                     MenuRecyclerViewAdapter searchAdapter = new MenuRecyclerViewAdapter(
                             response.body().getMenus(), getApplicationContext(),
                             new MenuRecyclerViewAdapter.OnItemClickListener(){
