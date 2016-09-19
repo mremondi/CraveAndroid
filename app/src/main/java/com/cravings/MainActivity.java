@@ -1,23 +1,15 @@
 package com.cravings;
 
 import android.content.pm.PackageManager;
-import android.support.annotation.IdRes;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.FrameLayout;
+import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.adapters.CraveLocationManager;
-import com.cravings.fragments.FavoritesFragment;
-import com.cravings.fragments.FeaturedFragment;
-import com.cravings.fragments.NearMeFragment;
-import com.cravings.fragments.ProfileFragment;
 import com.cravings.fragments.SearchFragment;
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnMenuTabClickListener;
 import android.Manifest;
 import android.widget.Toast;
 
@@ -32,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout layoutContent;
     private BottomBar mBottomBar;
 
+    private BottomBarAdapter bottomBarAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +34,21 @@ public class MainActivity extends AppCompatActivity {
 
         layoutContent = (FrameLayout) findViewById(R.id.main_frame_content);
 
+        mBottomBar = BottomBar.attach(this, savedInstanceState);
+        this.bottomBarAdapter = new BottomBarAdapter(mBottomBar, this);
+        this.bottomBarAdapter.setUpBottomBarMain();
+
         // display the given fragment
         if(getIntent().getStringExtra("FRAGMENT_TAG") != null){
-            showFragment(getIntent().getStringExtra(FRAGMENT_TAG));
+            this.bottomBarAdapter.showFragment(getIntent().getStringExtra(FRAGMENT_TAG));
         }
         else {
-            showFragment(SearchFragment.TAG);
+            this.bottomBarAdapter.showFragment(SearchFragment.TAG);
         }
 
         craveLocationManager = new CraveLocationManager(this);
 
-        mBottomBar = BottomBar.attach(this, savedInstanceState);
-        setUpBottomBar();
+
         requestNeededPermission();
     }
 
@@ -88,78 +85,5 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
         }
-    }
-
-
-    private void showFragment(String tag) {
-        Fragment fragment = getSupportFragmentManager().findFragmentByTag(tag);
-        if (fragment == null) {
-            if (tag.equals(SearchFragment.TAG)) {
-                fragment = new SearchFragment();
-            }
-            else if (tag.equals(FeaturedFragment.TAG)) {
-                fragment = new FeaturedFragment();
-            }
-            else if (tag.equals(FavoritesFragment.TAG)) {
-                fragment = new FavoritesFragment();
-            }
-            else if (tag.equals(NearMeFragment.TAG)) {
-                fragment = new NearMeFragment();
-            }
-            else if (tag.equals(ProfileFragment.TAG)) {
-                fragment = new ProfileFragment();
-            }
-        }
-
-        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
-        trans.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        trans.replace(R.id.main_frame_content, fragment, tag);
-        trans.addToBackStack(null);
-        trans.commit();
-    }
-
-    public void setUpBottomBar(){
-        mBottomBar.noNavBarGoodness();
-        mBottomBar.setItems(R.menu.bottombar_menu);
-        mBottomBar.setDefaultTabPosition(2);
-        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
-            @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    // go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    showFragment(NearMeFragment.TAG);
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    showFragment(SearchFragment.TAG);
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-                    showFragment(FavoritesFragment.TAG);
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
-                }
-            }
-
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    //go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    // go to search fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    // go to near me fragment
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
-                }
-            }
-        });
     }
 }

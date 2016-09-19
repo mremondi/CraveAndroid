@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.cravings.R;
 import com.cravings.data.Rating;
-import com.cravings.data.Restaurant;
 import java.util.List;
 
 

@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.data.MenuItem;
 import com.cravings.fragments.NearMeFragment;
 import com.cravings.fragments.SearchFragment;
@@ -22,13 +24,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-// TODO: INCLUDE BOTTOM BAR HERE: it has to be initialized in the code...
-
 public class ItemView extends AppCompatActivity {
 
     private String restaurant_id;
     private String objectID;
 
+    private BottomBarAdapter bottomBarAdapter;
     private BottomBar mBottomBar;
 
 
@@ -38,7 +39,8 @@ public class ItemView extends AppCompatActivity {
         setContentView(R.layout.activity_item_view);
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
-        setUpBottomBar();
+        this.bottomBarAdapter = new BottomBarAdapter(mBottomBar, this);
+        this.bottomBarAdapter.setUpBottomBar();
 
         final TextView tvItemViewTitle = (TextView) findViewById(R.id.tvItemViewTitle);
         final TextView tvItemViewRestaurantName = (TextView) findViewById(R.id.tvItemViewRestaurantName);
@@ -46,8 +48,6 @@ public class ItemView extends AppCompatActivity {
         final RatingBar rbItemViewRating = (RatingBar) findViewById(R.id.rbItemViewRating);
         final TextView tvItemViewDescription = (TextView) findViewById(R.id.tvItemViewDescription);
         final TextView tvItemViewTags = (TextView) findViewById(R.id.tvItemViewTags);
-
-
 
         Intent intent = getIntent();
         objectID = intent.getStringExtra("OBJECT ID");
@@ -118,54 +118,6 @@ public class ItemView extends AppCompatActivity {
                 }
             });
         }
-    }
-
-    public void setUpBottomBar(){
-        mBottomBar.noNavBarGoodness();
-        mBottomBar.setItems(R.menu.bottombar_menu);
-        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
-            @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    // go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
-                    startActivity(i);
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    i.putExtra(MainActivity.FRAGMENT_TAG, SearchFragment.TAG);
-                    startActivity(i);
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-
-                }
-            }
-
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    //go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    // go to search fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    // go to near me fragment
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
-                }
-            }
-        });
     }
 
     @Override

@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.adapters.MenuItemRecyclerAdapter;
 import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
@@ -27,6 +29,7 @@ public class MenuView extends AppCompatActivity {
 
     TextView testContent;
 
+    private BottomBarAdapter bottomBarAdapter;
     private BottomBar mBottomBar;
 
     @Override
@@ -36,7 +39,8 @@ public class MenuView extends AppCompatActivity {
 
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
-        setUpBottomBar();
+        this.bottomBarAdapter = new BottomBarAdapter(mBottomBar, this);
+        this.bottomBarAdapter.setUpBottomBar();
 
         testContent = (TextView) findViewById(R.id.test_content);
 
@@ -90,54 +94,6 @@ public class MenuView extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<MenuItem>> call, Throwable t) { Log.d("HERE in fail", t.toString());}
-        });
-    }
-
-    public void setUpBottomBar(){
-        mBottomBar.noNavBarGoodness();
-        mBottomBar.setItems(R.menu.bottombar_menu);
-        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
-            @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    // go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
-                    startActivity(i);
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    i.putExtra(MainActivity.FRAGMENT_TAG, SearchFragment.TAG);
-                    startActivity(i);
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-
-                }
-            }
-
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    //go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    // go to search fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    // go to near me fragment
-                }
-                else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
-                }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
-                }
-            }
         });
     }
 
