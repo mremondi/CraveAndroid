@@ -75,7 +75,7 @@ public class BottomBarAdapter {
                     showFragment(FavoritesFragment.TAG);
                 }
                 else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
+                    showFragment(ProfileFragment.TAG);
                 }
             }
 
@@ -84,17 +84,17 @@ public class BottomBarAdapter {
                 if (menuItemId == R.id.nav_bar_featured) {
                     //go to featured fragment
                 }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    // go to search fragment
-                }
                 else if(menuItemId == R.id.nav_bar_near_me) {
-                    // go to near me fragment
+                    showFragment(NearMeFragment.TAG);
+                }
+                else if(menuItemId == R.id.nav_bar_search) {
+                    showFragment(SearchFragment.TAG);
                 }
                 else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
+                    showFragment(FavoritesFragment.TAG);
                 }
                 else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
+                    showFragment(ProfileFragment.TAG);
                 }
             }
         });
@@ -125,7 +125,9 @@ public class BottomBarAdapter {
                     activity.startActivity(i);
                 }
                 else if (menuItemId == R.id.nav_bar_profile) {
-
+                    Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, ProfileFragment.TAG);
+                    activity.startActivity(i);
                 }
             }
 
@@ -134,17 +136,25 @@ public class BottomBarAdapter {
                 if (menuItemId == R.id.nav_bar_featured) {
                     //go to featured fragment
                 }
-                else if(menuItemId == R.id.nav_bar_search) {
-                    // go to search fragment
-                }
                 else if(menuItemId == R.id.nav_bar_near_me) {
-                    // go to near me fragment
+                    Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
+                    activity.startActivity(i);
+                }
+                else if(menuItemId == R.id.nav_bar_search) {
+                    Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, SearchFragment.TAG);
+                    activity.startActivity(i);
                 }
                 else if (menuItemId == R.id.nav_bar_favorites) {
-                    // go to favorites fragments
+                    Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, FavoritesFragment.TAG);
+                    activity.startActivity(i);
                 }
                 else if (menuItemId == R.id.nav_bar_profile) {
-                    // go to profile fragment
+                    Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, ProfileFragment.TAG);
+                    activity.startActivity(i);
                 }
             }
         });

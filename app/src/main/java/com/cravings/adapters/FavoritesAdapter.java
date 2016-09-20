@@ -77,7 +77,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
                 TRY TO UN-NEST SOMEDAY. ESPECIALLY IF IT IS SLOW ONCE MY SERVER IS NOT LOCAL
             */
 
-            tvFavoritesViewItemRating.setText("" + rating.getRating());
+            tvFavoritesViewItemRating.setText(" " + rating.getRating());
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl("http://10.0.2.2:3000/api/")
@@ -90,7 +90,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
                 @Override
                 public void onResponse(Call<MenuItem> call, Response<MenuItem> response) {
                     tvFavoritesViewItemName.setText(response.body().getName());
-                    tvFavoritesViewItemPrice.setText(response.body().getPrice());
+                    tvFavoritesViewItemPrice.setText("$" + response.body().getPrice());
                     tvFavoritesViewRestaurantName.setText(response.body().getRestaurant_name());
                     itemView.setOnClickListener(new View.OnClickListener() {
                         @Override

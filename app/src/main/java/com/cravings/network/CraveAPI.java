@@ -68,4 +68,7 @@ public interface CraveAPI {
     @GET("ratings/{user_id}")
     Call<List<Rating>> getUserFavorites(@Path("user_id") String user_id);
 
+    @GET("account/profile/{user_id}")
+    Call<User> getUserProfile(@Path("user_id") String user_id);
+
 }
