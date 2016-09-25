@@ -6,6 +6,7 @@ package com.cravings.data;
 public class User {
 
     private String email;
+    private String name;
     private String _id;
     private String password;
     private String facebook;
