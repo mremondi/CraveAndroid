@@ -65,6 +65,10 @@ public interface CraveAPI {
     @POST("login")
     Call<User> loginUser(@Field("email") String email, @Field(value = "password", encoded = true) String password);
 
+    @FormUrlEncoded
+    @POST("register")
+    Call<User> registerUser(@Field("email") String email, @Field(value = "password", encoded = true) String password);
+
     @GET("ratings/{user_id}")
     Call<List<Rating>> getUserFavorites(@Path("user_id") String user_id);
 

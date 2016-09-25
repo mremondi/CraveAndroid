@@ -9,4 +9,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cravings.RegisterActivity">
 
+    <EditText
+        android:id="@+id/etRegisterEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:inputType="textEmailAddress"
+        android:hint="Enter Email Here"/>
+
+    <EditText
+        android:id="@+id/etRegisterPassword1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etRegisterEmail"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:hint="Enter Password Here"/>
+
+    <EditText
+        android:id="@+id/etRegisterPassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etRegisterPassword1"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:hint="Confirm Password"/>
+
+
+    <Button
+        android:id="@+id/btnRegisterRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etRegisterPassword2"
+        android:text="Register"/>
+
+
+
 </RelativeLayout>
