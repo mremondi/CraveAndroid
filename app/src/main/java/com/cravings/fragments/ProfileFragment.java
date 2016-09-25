@@ -1,5 +1,6 @@
 package com.cravings.fragments;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.cravings.R;
+import com.cravings.SplashActivity;
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
 
@@ -40,7 +42,8 @@ public class ProfileFragment extends Fragment {
 
 
         final Button btnProfileChangePassword = (Button) rootView.findViewById(R.id.btnProfileChangePassword);
-        Button btnProfileSaveChanges = (Button) rootView.findViewById(R.id.btnProfileSaveChanges);
+        final Button btnProfileSaveChanges = (Button) rootView.findViewById(R.id.btnProfileSaveChanges);
+        final Button btnProfileLogOut = (Button) rootView.findViewById(R.id.btnProfileLogOut);
 
 
         /*********************Load Profile**********************/
@@ -69,8 +72,8 @@ public class ProfileFragment extends Fragment {
         });
         /******************************************************/
 
-        /*********************POST PROFILE CHANGES**********************/
 
+        /*********************POST PROFILE CHANGES**********************/
         btnProfileSaveChanges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +98,6 @@ public class ProfileFragment extends Fragment {
         /***************************************************************/
 
         /************************POST PASSWORD CHANGE***********************/
-
         btnProfileChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +124,32 @@ public class ProfileFragment extends Fragment {
 
                             }
                         });
+                    }
+                });
+            }
+        });
+        /*******************************************************************/
+
+        /*************************USER LOG OUT******************************/
+        btnProfileLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getActivity().getSharedPreferences("UserData", 0);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("LOGGED_IN", false);
+                editor.apply();
+
+                Call<User> userLogOut = craveAPI.logOutUser();
+                userLogOut.enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        Intent i = new Intent(rootView.getContext(), SplashActivity.class);
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+                        Log.d("FAILED", t.getMessage());
                     }
                 });
             }

@@ -65,6 +65,9 @@ public interface CraveAPI {
     @POST("login")
     Call<User> loginUser(@Field("email") String email, @Field(value = "password", encoded = true) String password);
 
+    @GET("logout")
+    Call<User> logOutUser();
+
     @FormUrlEncoded
     @POST("register")
     Call<User> registerUser(@Field("email") String email, @Field(value = "password", encoded = true) String password);

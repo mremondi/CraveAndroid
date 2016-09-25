@@ -66,12 +66,16 @@ public class LoginActivity extends AppCompatActivity {
                           @Override
                           public void onResponse(Call<User> call, Response<User> response) {
                               // on success move to MainActivity
+                              if(response.body() == null){
+                                  Toast.makeText(LoginActivity.this, "Incorrect Email or Password", Toast.LENGTH_SHORT).show();
+                                  return;
+                              }
 
                               SharedPreferences prefs = getSharedPreferences("UserData", 0);
                               SharedPreferences.Editor editor = prefs.edit();
                               editor.putString("email", email);
                               editor.putString("user_id", response.body().getId());
-                              Log.d("USER ID", response.body().getId());
+                              editor.putBoolean("LOGGED_IN", true);
                               editor.apply();
 
                               Intent i = new Intent(getApplicationContext(), MainActivity.class);
