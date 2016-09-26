@@ -91,7 +91,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
 
                 @Override
                 public void onFailure(Call<Menu> call, Throwable t) {
-                    Log.d("DAMN", "IT");
+
                 }
             });
         }

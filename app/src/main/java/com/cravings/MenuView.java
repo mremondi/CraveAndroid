@@ -1,24 +1,20 @@
 package com.cravings;
 
 import android.content.Intent;
-import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
-
 import com.cravings.adapters.BottomBarAdapter;
-import com.cravings.adapters.MenuItemRecyclerAdapter;
+import com.cravings.adapters.MenuSection;
 import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
-import com.cravings.fragments.NearMeFragment;
-import com.cravings.fragments.SearchFragment;
 import com.cravings.network.CraveAPI;
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnMenuTabClickListener;
 import java.util.List;
+import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,14 +40,12 @@ public class MenuView extends AppCompatActivity {
 
         testContent = (TextView) findViewById(R.id.test_content);
 
+        final SectionedRecyclerViewAdapter sectionAdapter = new SectionedRecyclerViewAdapter();
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view_menu_view);
-        recyclerView.setHasFixedSize(true);
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = getIntent();
-        String menuID = intent.getStringExtra("OBJECT ID");
+        final String menuID = intent.getStringExtra("OBJECT ID");
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:3000/api/")
@@ -66,41 +60,45 @@ public class MenuView extends AppCompatActivity {
                 if (response.body() == null){ }
                 else {
                     testContent.setText(response.body().getMenuName());
+                    for (final String section : response.body().getSections()){
+                        if (section != null) {
+                            Call<List<MenuItem>> menuItemBySection = craveAPI.getMenuItemsBySection(menuID, section);
+                            menuItemBySection.enqueue(new Callback<List<MenuItem>>() {
+                                @Override
+                                public void onResponse(Call<List<MenuItem>> call, Response<List<MenuItem>> response) {
+                                    if (response.body().size() > 0) {
+                                        Log.d("MENU ITEMS", response.body().toString());
+                                    }
+                                    sectionAdapter.addSection(new MenuSection(section, response.body(), new MenuSection.OnItemClickListener() {
+                                        @Override
+                                        public void onClick(MenuItem item) {
+                                            Intent i = new Intent(getApplicationContext(), ItemView.class);
+                                            i.putExtra("OBJECT ID", item.getObjectID());
+                                            startActivity(i);
+                                        }
+                                    }));
+                                    recyclerView.setAdapter(sectionAdapter);
+                                }
+
+                                @Override
+                                public void onFailure(Call<List<MenuItem>> call, Throwable t) {
+                                    Log.d("SHOULD NOT BEHERE1", t.getMessage());
+                                }
+                            });
+                        }
+                    }
                 }
             }
             @Override
-            public void onFailure(Call<Menu> call, Throwable t) {}
-        });
-
-        Call<List<MenuItem>> menuItemQuery = craveAPI.getMenuItems(menuID);
-        menuItemQuery.enqueue(new Callback<List<MenuItem>>() {
-            @Override
-            public void onResponse(Call<List<MenuItem>> call, Response<List<MenuItem>> response) {
-                Log.d("ITEMS", response.body().get(0).getName());
-
-                MenuItemRecyclerAdapter menuItemAdapter = new MenuItemRecyclerAdapter(response.body(), getApplicationContext(),
-                        new MenuItemRecyclerAdapter.OnItemClickListener(){
-                            @Override
-                            public void onClick(MenuItem item) {
-                                Intent i = new Intent(getApplicationContext(), ItemView.class);
-                                i.putExtra("OBJECT ID", item.getObjectID());
-                                startActivity(i);
-                            }
-                        });
-                recyclerView.setAdapter(menuItemAdapter);
-
-                // TODO: get sort by section working... need to do this from CraveWeb first
+            public void onFailure(Call<Menu> call, Throwable t) {
+                Log.d("SHOULD NOT BEHERE", t.getMessage());
             }
-
-            @Override
-            public void onFailure(Call<List<MenuItem>> call, Throwable t) { Log.d("HERE in fail", t.toString());}
         });
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
         mBottomBar.onSaveInstanceState(outState);
     }
 }

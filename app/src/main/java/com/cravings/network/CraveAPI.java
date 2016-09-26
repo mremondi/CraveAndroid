@@ -43,6 +43,9 @@ public interface CraveAPI {
     @GET("menus_items/{id}")
     Call<List<MenuItem>> getMenuItems(@Path("id") String id);
 
+    @GET("menus_items/{id}/{section}")
+    Call<List<MenuItem>> getMenuItemsBySection(@Path("id") String id, @Path("section") String section);
+
     @GET("items")
     Call<List<MenuItem>> getItems();
 
