@@ -48,8 +48,7 @@
             android:id="@+id/recyclerViewRestView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:background="#6b6b6b" />
+            android:scrollbars="vertical" />
 
     </LinearLayout>
 

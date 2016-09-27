@@ -44,8 +44,8 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:background="#6b6b6b" />
+            android:scrollbars="vertical"/>
+            <!--android:background="#6b6b6b" />-->
     </LinearLayout>
 
 </LinearLayout>
