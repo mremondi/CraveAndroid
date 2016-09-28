@@ -15,6 +15,7 @@ import com.cravings.data.MenuItem;
 import com.cravings.fragments.NearMeFragment;
 import com.cravings.fragments.SearchFragment;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 import retrofit2.Call;
@@ -52,11 +53,8 @@ public class ItemView extends AppCompatActivity {
         Intent intent = getIntent();
         objectID = intent.getStringExtra("OBJECT ID");
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+        // set up retrofit
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         Call<MenuItem> itemQuery = craveAPI.getItemById(objectID);
         itemQuery.enqueue(new Callback<MenuItem>() {

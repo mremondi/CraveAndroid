@@ -19,6 +19,7 @@ import com.cravings.adapters.SearchAdapter;
 import com.cravings.data.MenuItem;
 import com.cravings.data.Rating;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 
 import java.util.List;
 
@@ -48,12 +49,8 @@ public class FavoritesFragment extends Fragment {
         SharedPreferences prefs = getActivity().getSharedPreferences("UserData", 0);
         String user_id = prefs.getString("user_id", "");
 
-        // CALL and GET THE LIST OF RATINGS
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+        // set up retrofit
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         Call<List<Rating>> ratingQuery = craveAPI.getUserFavorites(user_id);
         ratingQuery.enqueue(new Callback<List<Rating>>() {

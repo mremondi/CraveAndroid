@@ -12,6 +12,7 @@ import com.cravings.adapters.MenuSection;
 import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 import com.roughike.bottombar.BottomBar;
 import java.util.List;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
@@ -47,11 +48,8 @@ public class MenuView extends AppCompatActivity {
         Intent intent = getIntent();
         final String menuID = intent.getStringExtra("OBJECT ID");
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+        // set up retrofit
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         Call<Menu> menuQuery = craveAPI.getMenuById(menuID);
         menuQuery.enqueue(new Callback<Menu>() {

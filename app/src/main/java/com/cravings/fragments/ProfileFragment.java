@@ -17,6 +17,7 @@ import com.cravings.R;
 import com.cravings.SplashActivity;
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,13 +46,10 @@ public class ProfileFragment extends Fragment {
         final Button btnProfileSaveChanges = (Button) rootView.findViewById(R.id.btnProfileSaveChanges);
         final Button btnProfileLogOut = (Button) rootView.findViewById(R.id.btnProfileLogOut);
 
+        // set up retrofit
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         /*********************Load Profile**********************/
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
 
         // GET CURRENT USER ID
         SharedPreferences prefs = getActivity().getSharedPreferences("UserData", 0);

@@ -35,13 +35,11 @@ public class MenuSection extends StatelessSection {
 
     @Override
     public RecyclerView.ViewHolder getItemViewHolder(View view) {
-        Log.d("Here in", "getItemViewHolder");
         return new SectionItemViewHolder(view);
     }
 
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        Log.d("SHOULD GET HERE", "AT SOMEPOINT");
         SectionItemViewHolder sectionItemViewHolder = (SectionItemViewHolder) holder;
         sectionItemViewHolder.tvMenuItemName.setText(items.get(position).getName());
         sectionItemViewHolder.tvMenuItemPrice.setText(items.get(position).getPrice());
@@ -55,7 +53,6 @@ public class MenuSection extends StatelessSection {
 
     @Override
     public RecyclerView.ViewHolder getHeaderViewHolder(View view) {
-        Log.d("here in", "getHeaderViewHolder");
         return new HeaderViewHolder(view);
     }
 

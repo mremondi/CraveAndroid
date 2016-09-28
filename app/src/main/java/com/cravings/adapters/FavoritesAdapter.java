@@ -12,6 +12,7 @@ import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
 import com.cravings.data.Rating;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 
 import java.util.List;
 
@@ -79,11 +80,8 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
 
             tvFavoritesViewItemRating.setText(" " + rating.getRating());
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:3000/api/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+            // set up retrofit
+            final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
             Call<MenuItem> itemQuery = craveAPI.getItemById(rating.getItemID());
             itemQuery.enqueue(new Callback<MenuItem>() {

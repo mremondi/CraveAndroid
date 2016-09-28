@@ -27,6 +27,7 @@ import com.cravings.data.MenuItem;
 import com.cravings.data.ModelObject;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 
 import java.util.List;
 
@@ -67,11 +68,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         searchRecyclerView.setLayoutManager(linearLayoutManager);
 
         // set up retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         // set up views
         etSearch = (EditText) rootView.findViewById(R.id.etSearch);

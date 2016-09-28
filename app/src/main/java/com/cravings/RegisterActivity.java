@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,11 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etRegisterPassword2 = (EditText) findViewById(R.id.etRegisterPassword2);
 
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+        // set up retrofit
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         Button btnRegister = (Button) findViewById(R.id.btnRegisterRegister);
         if (btnRegister != null){

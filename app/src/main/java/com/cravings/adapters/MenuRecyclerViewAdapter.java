@@ -11,6 +11,7 @@ import com.cravings.R;
 import com.cravings.data.Menu;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
 
 import java.util.ArrayList;
 
@@ -70,11 +71,8 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
                 TRY TO UN-NEST SOMEDAY. ESPECIALLY IF IT IS SLOW ONCE MY SERVER IS NOT LOCAL
             */
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:3000/api/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+            // set up retrofit
+            final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
             Call<Menu> menuCall = craveAPI.getMenuById(menu);
             menuCall.enqueue(new Callback<Menu>() {

@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,11 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         etLoginEmail.setText(email);
 
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final CraveAPI craveAPI = retrofit.create(CraveAPI.class);
+        // set up retrofit
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         Button btnLogin = (Button) findViewById(R.id.btnLoginLogin);
         if (btnLogin != null){
