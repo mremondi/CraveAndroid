@@ -34,9 +34,10 @@
         android:id="@+id/tvItemViewImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/sonicburger"
+        android:src="@drawable/ic_local_dining_white_48dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="#FFFFFF"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_fill_color="@color/colorPrimary"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvItemViewRestaurantName"/>
 

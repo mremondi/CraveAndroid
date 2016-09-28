@@ -41,6 +41,8 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
 
     private HashMap<Marker, Restaurant> markerRestaurantHashMap;
 
+    private LatLng location;
+
     private MapView mapView;
     private GoogleMap googleMap;
 
@@ -65,8 +67,8 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
 
     @Subscribe
     public void onLocationReceived(Location location) {
-        LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, (float)14));
+        this.location = new LatLng(location.getLatitude(), location.getLongitude());
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)14));
 
         // set up retrofit
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
@@ -75,9 +77,7 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
         restaurantQuery.enqueue(new Callback<List<Restaurant>>() {
             @Override
             public void onResponse(Call<List<Restaurant>> call, Response<List<Restaurant>> response) {
-                Log.d("onReponse", "NULL? " + response);
                 if (response.body() == null) {
-                    Log.d("is the body", "Null?");
                 } else {
                     for (Restaurant restaurant : response.body()) {
                         addRestaurantMarker(restaurant);
@@ -119,6 +119,9 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public void onStart() {
         super.onStart();
+        if (this.location != null) {
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float) 14));
+        }
         EventBus.getDefault().register(this);
     }
 
