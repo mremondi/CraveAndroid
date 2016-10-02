@@ -36,8 +36,8 @@
         android:layout_height="200dp"
         android:src="@drawable/ic_local_dining_white_48dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/colorPrimary"
-        app:civ_fill_color="@color/colorPrimary"
+        app:civ_border_color="@color/colorPrimaryDark"
+        app:civ_fill_color="@color/colorPrimaryDark"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvItemViewRestaurantName"/>
 
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/NormalTextThemeBold"
-        android:text="Description:"
+        android:text="@string/itemview_description"
         android:layout_below="@+id/ll_item_info"/>
 
     <TextView
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/NormalTextThemeBold"
-        android:text="Dietary Information:"
+        android:text="@string/itemview_dietaryInfo"
         android:layout_below="@+id/tvItemViewDescription"/>
 
     <TextView

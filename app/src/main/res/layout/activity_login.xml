@@ -7,32 +7,37 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary"
     tools:context="com.cravings.LoginActivity">
 
     <EditText
         android:id="@+id/etLoginEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:inputType="textEmailAddress"
-        android:hint="Enter Email Here"/>
+        android:textColor="@color/colorAccent"
+        android:hint="@string/login_email"/>
 
     <EditText
         android:id="@+id/etLoginPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etLoginEmail"
         android:layout_centerHorizontal="true"
         android:inputType="textPassword"
-        android:hint="Enter Password Here"/>
+        android:textColor="@color/colorAccent"
+        android:hint="@string/login_password"/>
 
     <Button
         android:id="@+id/btnLoginLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/etLoginPassword"
-        android:text="Login"/>
+        style="@style/LoginButtonStyle"
+        android:text="@string/login_login"/>
+
 
 
 

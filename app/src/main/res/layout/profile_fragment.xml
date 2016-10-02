@@ -13,7 +13,8 @@
     <EditText
         android:id="@+id/etProfileEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"/>
 
     <EditText
         android:id="@+id/etProfilePassword1"
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         android:inputType="textPassword"
-        android:hint="Enter New Password"/>
+        android:hint="@string/profile_password1Hint"/>
 
     <EditText
         android:id="@+id/etProfilePassword2"
@@ -29,23 +30,29 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         android:inputType="textPassword"
-        android:hint="Confirm New Password"/>
+        android:hint="@string/profile_password2Hint"/>
 
     <Button
         android:id="@+id/btnProfileChangePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Password"/>
+        android:layout_marginTop="10dp"
+        style="@style/InAppButtonStyle"
+        android:text="@string/profile_btnChangePassword"/>
 
     <Button
         android:id="@+id/btnProfileSaveChanges"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Changes"/>
+        android:layout_marginTop="10dp"
+        style="@style/InAppButtonStyle"
+        android:text="@string/profile_btnSaveChanges"/>
 
     <Button
         android:id="@+id/btnProfileLogOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log Out"/>
+        style="@style/InAppButtonStyle"
+        android:layout_marginTop="10dp"
+        android:text="@string/profile_btnLogOut"/>
 </LinearLayout>

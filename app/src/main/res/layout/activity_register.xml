@@ -7,43 +7,46 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary"
     tools:context="com.cravings.RegisterActivity">
 
     <EditText
         android:id="@+id/etRegisterEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:inputType="textEmailAddress"
-        android:hint="Enter Email Here"/>
+        android:textColor="@color/colorAccent"
+        android:hint="@string/register_emailHint"/>
 
     <EditText
         android:id="@+id/etRegisterPassword1"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etRegisterEmail"
         android:layout_centerHorizontal="true"
         android:inputType="textPassword"
-        android:hint="Enter Password Here"/>
+        android:textColor="@color/colorAccent"
+        android:hint="@string/register_password1Hint"/>
 
     <EditText
         android:id="@+id/etRegisterPassword2"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etRegisterPassword1"
         android:layout_centerHorizontal="true"
         android:inputType="textPassword"
-        android:hint="Confirm Password"/>
+        android:textColor="@color/colorAccent"
+        android:hint="@string/register_password2Hint"/>
 
 
     <Button
         android:id="@+id/btnRegisterRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/etRegisterPassword2"
-        android:text="Register"/>
-
-
+        style="@style/LoginButtonStyle"
+        android:text="@string/register_btnRegister"/>
 
 </RelativeLayout>

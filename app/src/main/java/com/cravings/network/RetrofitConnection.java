@@ -10,7 +10,7 @@ public class RetrofitConnection {
 
     public static CraveAPI setUpRetrofit(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://cfc99d57.ngrok.io/api/")
+                .baseUrl("http://05eb7d7b.ngrok.io/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(CraveAPI.class);

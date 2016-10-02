@@ -1,6 +1,7 @@
 package com.cravings.fragments;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,11 @@ import com.cravings.data.ModelObject;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.RetrofitConnection;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.model.LatLng;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
@@ -47,6 +53,8 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
     private String filter;
     private boolean searchItem = true;
+
+    private LatLng location;
 
     @Nullable
     @Override
@@ -95,7 +103,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
                     return;
                 }
                 if (searchItem) {
-                    Call<List<MenuItem>> itemQuery = craveAPI.searchItemsSorted(etSearch.getText().toString(), filter);
+                    Call<List<MenuItem>> itemQuery = craveAPI.searchItemsSorted(etSearch.getText().toString(), location.latitude, location.longitude, filter);
                     itemQuery.enqueue(new Callback<List<MenuItem>>() {
                         @Override
                         public void onResponse(Call<List<MenuItem>> call, Response<List<MenuItem>> response) {
@@ -161,10 +169,12 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     @Override
     public void onStart() {
         super.onStart();
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onStop() {
+        EventBus.getDefault().unregister(this);
         super.onStop();
     }
 
@@ -188,4 +198,12 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     public void onNothingSelected(AdapterView<?> parent) {
         this.filter = "PLH";
     }
+
+    @Subscribe
+    public void onLocationReceived(Location location) {
+        this.location = new LatLng(location.getLatitude(), location.getLongitude());
+
+    }
+
+
 }

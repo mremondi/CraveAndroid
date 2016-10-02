@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">Crave</string>
+    <string name="splash_title">Crave</string>
+    <string name="splash_register">Register</string>
+    <string name="splash_login">Login</string>
+    <string name="login_email">Enter Email Here</string>
+    <string name="login_password">Enter Password Here</string>
+    <string name="login_login">Login</string>
+    <string name="search_hint">Search</string>
+    <string name="search_btnSearch">Search</string>
+    <string name="register_emailHint">Enter Email Here</string>
+    <string name="register_password1Hint">Enter Password Here</string>
+    <string name="register_password2Hint">Confirm Password</string>
+    <string name="register_btnRegister">Register</string>
+    <string name="profile_password1Hint">Enter New Password</string>
+    <string name="profile_password2Hint">Confirm New Password</string>
+    <string name="profile_btnChangePassword">Change Password</string>
+    <string name="profile_btnSaveChanges">Save Changes</string>
+    <string name="profile_btnLogOut">Log Out</string>
+    <string name="itemview_description">Description:</string>
+    <string name="itemview_dietaryInfo">Dietary Information:</string>
+    <string name="favorites_cravings">Your Cravings</string>
 
     <string-array name="filter_choices">
         <item>Price: Low -> High</item>

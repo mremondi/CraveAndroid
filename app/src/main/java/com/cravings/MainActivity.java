@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         this.bottomBarAdapter = new BottomBarAdapter(mBottomBar, this);
         this.bottomBarAdapter.setUpBottomBarMain();
 
+
         // display the given fragment
         if(getIntent().getStringExtra("FRAGMENT_TAG") != null){
             this.bottomBarAdapter.showFragment(getIntent().getStringExtra(FRAGMENT_TAG));

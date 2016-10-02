@@ -8,7 +8,6 @@
     android:layout_height="wrap_content"
     card_view:cardBackgroundColor="#FFFFFF"
     android:layout_margin="2dp"
-    android:padding="8dp"
     card_view:cardElevation="4dp"
     app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="4dp">
@@ -17,6 +16,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
+        style="@style/RowStyle"
         android:layout_height="wrap_content">
 
     <RelativeLayout

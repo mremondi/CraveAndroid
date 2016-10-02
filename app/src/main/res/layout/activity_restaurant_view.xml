@@ -64,17 +64,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvRestViewTags"/>
 
-    <RatingBar
-        android:id="@+id/rbRestViewPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rbRestViewRating"/>
+    <!--
+    TODO: We want this eventually but first we must be able to get the average
+    price from the database and compare this to that then use a dollar sign as the
+    stars
+    <RatingBar-->
+        <!--android:id="@+id/rbRestViewPrice"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/rbRestViewRating"/>-->
 
     <TextView
         android:id="@+id/tvRestViewAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rbRestViewPrice"/>
+        android:layout_below="@+id/rbRestViewRating"/>
 
     <TextView
         android:id="@+id/tvRestViewURL"

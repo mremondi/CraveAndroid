@@ -12,6 +12,5 @@
         android:id="@+id/tvMenuViewSectionHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/SubTitleTheme"
-        android:text="header"/>
+        style="@style/SubTitleTheme"/>
 </LinearLayout>

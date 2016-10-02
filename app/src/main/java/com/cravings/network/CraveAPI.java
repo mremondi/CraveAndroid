@@ -58,8 +58,9 @@ public interface CraveAPI {
     @GET("items/search/{query}")
     Call<List<MenuItem>> searchItems(@Path("query") String query);
 
-    @GET("items/search/{query}/{filter}")
-    Call<List<MenuItem>> searchItemsSorted(@Path("query") String query, @Path("filter") String filter);
+    @GET("items/search/{query}/{filter}/{latitude}/{longitude}")
+    Call<List<MenuItem>> searchItemsSorted(@Path("query") String query, @Path("latitude") Double lat,
+                                           @Path("longitude") Double lon, @Path("filter") String filter);
 
     @GET("items/search/{menu_id}")
     Call<List<MenuItem>> searchForMenuItems(@Path("menu_id") String menu_id);
