@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cravings.ItemView;
+import com.cravings.LoginActivity;
 import com.cravings.R;
 import com.cravings.adapters.FavoritesAdapter;
 import com.cravings.adapters.SearchAdapter;
@@ -45,9 +46,8 @@ public class FavoritesFragment extends Fragment {
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
         favoritesRecyclerView.setLayoutManager(linearLayoutManager);
 
-        // GET CURRENT USER ID
-        SharedPreferences prefs = getActivity().getSharedPreferences("UserData", 0);
-        String user_id = prefs.getString("user_id", "");
+        SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.LOGGED_IN, 0);
+        String user_id = prefs.getString(LoginActivity.USER_ID, "");
 
         // set up retrofit
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
@@ -56,13 +56,12 @@ public class FavoritesFragment extends Fragment {
         ratingQuery.enqueue(new Callback<List<Rating>>() {
             @Override
             public void onResponse(Call<List<Rating>> call, Response<List<Rating>> response) {
-                Log.d("FAVORITES RESPONSE: ", response.body().toString());
                 FavoritesAdapter favoritesAdapter = new FavoritesAdapter(response.body(), getContext(),
                         new FavoritesAdapter.OnItemClickListener() {
                             @Override
                             public void onClick(Rating rating) {
                                 Intent i = new Intent(getActivity(), ItemView.class);
-                                i.putExtra("OBJECT ID", rating.getItemID());
+                                i.putExtra(ItemView.ITEM_ID, rating.getItemID());
                                 startActivity(i);
                             }
                         });

@@ -109,7 +109,7 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
                 @Override
                 public void onInfoWindowClick(Marker marker) {
                     Intent i = new Intent(getContext(), RestaurantView.class);
-                    i.putExtra("RESTAURANT ID", markerRestaurantHashMap.get(marker).getObjectID());
+                    i.putExtra(RestaurantView.RESTAURANT_ID, markerRestaurantHashMap.get(marker).getObjectID());
                     startActivity(i);
                 }
             });

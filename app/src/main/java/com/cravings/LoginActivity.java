@@ -20,6 +20,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
+    public static final String USER_DATA = "USER_DATA";
+    public static final String USER_ID = "USER_ID";
+    public static final String EMAIL = "EMAIL";
+    public static final String LOGGED_IN = "LOGGED_IN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etLoginEmail = (EditText) findViewById(R.id.etLoginEmail);
         final EditText etLoginPassword = (EditText) findViewById(R.id.etLoginPassword);
 
-        SharedPreferences prefs = getSharedPreferences("UserData", 0);
-        String email = prefs.getString("email", "");
-        String user_id = prefs.getString("user_id", "");
+        SharedPreferences prefs = getSharedPreferences(USER_DATA, 0);
+        String email = prefs.getString(EMAIL, "");
+        String user_id = prefs.getString(USER_ID, "");
 
         etLoginEmail.setText(email);
 
@@ -45,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if(etLoginEmail == null || etLoginPassword == null){
-                        Log.d("UH OH", "BAD NULL");
                         return;
                     }
                     else if(etLoginEmail.getText() == null || etLoginPassword.getText() == null){
@@ -70,11 +73,11 @@ public class LoginActivity extends AppCompatActivity {
                                   return;
                               }
 
-                              SharedPreferences prefs = getSharedPreferences("UserData", 0);
+                              SharedPreferences prefs = getSharedPreferences(USER_DATA, 0);
                               SharedPreferences.Editor editor = prefs.edit();
-                              editor.putString("email", email);
-                              editor.putString("user_id", response.body().getId());
-                              editor.putBoolean("LOGGED_IN", true);
+                              editor.putString(EMAIL, email);
+                              editor.putString(USER_ID, response.body().getId());
+                              editor.putBoolean(LOGGED_IN, true);
                               editor.apply();
 
                               Intent i = new Intent(getApplicationContext(), MainActivity.class);

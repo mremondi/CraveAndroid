@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,32 +16,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.cravings.ItemView;
 import com.cravings.R;
 import com.cravings.RestaurantView;
 import com.cravings.adapters.SearchAdapter;
 import com.cravings.adapters.SearchRestaurantAdapter;
-import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
-import com.cravings.data.ModelObject;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.RetrofitConnection;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.LatLng;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Converter;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     public static final String TAG = "SearchFragment";
@@ -82,16 +71,16 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         etSearch = (EditText) rootView.findViewById(R.id.etSearch);
         btnSearch = (Button) rootView.findViewById(R.id.btnSearch);
         tvSearchFragmentTitle = (TextView) rootView.findViewById(R.id.tvSearchFragmentTitle);
-        tvSearchFragmentTitle.setText("Search Items");
+        tvSearchFragmentTitle.setText(R.string.searchview_mealSearch);
         tvSearchFragmentTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 searchItem = !searchItem;
                 if (searchItem){
-                    tvSearchFragmentTitle.setText("Search Items");
+                    tvSearchFragmentTitle.setText(R.string.searchview_mealSearch);
                 }
                 else{
-                    tvSearchFragmentTitle.setText("Search Restaurants");
+                    tvSearchFragmentTitle.setText(R.string.searchview_restaurantSearch);
                 }
             }
         });
@@ -114,8 +103,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
                                             @Override
                                             public void onClick(MenuItem item) {
                                                 Intent i = new Intent(getContext(), ItemView.class);
-                                                i.putExtra("OBJECT ID", item.getObjectID());
-                                                Log.d("OBJECTID", item.getObjectID());
+                                                i.putExtra(ItemView.ITEM_ID, item.getObjectID());
                                                 startActivity(i);
                                             }
                                         });
@@ -141,8 +129,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
                                             @Override
                                             public void onClick(Restaurant restaurant) {
                                                 Intent i = new Intent(getContext(), RestaurantView.class);
-                                                i.putExtra("RESTAURANT ID", restaurant.getObjectID());
-                                                Log.d("RESTAURANT ID", restaurant.getObjectID());
+                                                i.putExtra(RestaurantView.RESTAURANT_ID, restaurant.getObjectID());
                                                 startActivity(i);
                                                 getActivity().finish();
                                             }
@@ -178,7 +165,6 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         super.onStop();
     }
 
-    // Spinner selection code
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         if (parent.getItemAtPosition(pos).equals("Price: Low -> High")){
             this.filter = "PLH";
@@ -204,6 +190,4 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         this.location = new LatLng(location.getLatitude(), location.getLongitude());
 
     }
-
-
 }

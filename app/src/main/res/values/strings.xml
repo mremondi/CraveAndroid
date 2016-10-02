@@ -20,6 +20,13 @@
     <string name="itemview_description">Description:</string>
     <string name="itemview_dietaryInfo">Dietary Information:</string>
     <string name="favorites_cravings">Your Cravings</string>
+    <string name="bb_featured">Featured</string>
+    <string name="bb_near_me">Near Me</string>
+    <string name="bb_search">Search</string>
+    <string name="bb_cravings">Cravings</string>
+    <string name="bb_profile">Profile</string>
+    <string name="searchview_mealSearch">Meal Search</string>
+    <string name="searchview_restaurantSearch">Restaurant Search</string>
 
     <string-array name="filter_choices">
         <item>Price: Low -> High</item>

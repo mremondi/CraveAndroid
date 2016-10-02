@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.cravings.fragments.SearchFragment;
-
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -26,9 +24,8 @@ public class SplashActivity extends AppCompatActivity {
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
         Button btnRegister = (Button) findViewById(R.id.btnRegister);
-        SharedPreferences prefs = getSharedPreferences("UserData", 0);
-        Log.d("LOGGED IN?", "" + prefs.getBoolean("LOGGED_IN", false));
-        if (prefs.getBoolean("LOGGED_IN", false)){
+        SharedPreferences prefs = getSharedPreferences(LoginActivity.USER_DATA, 0);
+        if (prefs.getBoolean(LoginActivity.LOGGED_IN, false)){
             new Handler().postDelayed(new Runnable(){
                 @Override
                 public void run() {

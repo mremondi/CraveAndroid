@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.cravings.LoginActivity;
 import com.cravings.R;
 import com.cravings.SplashActivity;
 import com.cravings.data.User;
@@ -52,8 +53,8 @@ public class ProfileFragment extends Fragment {
         /*********************Load Profile**********************/
 
         // GET CURRENT USER ID
-        SharedPreferences prefs = getActivity().getSharedPreferences("UserData", 0);
-        final String user_id = prefs.getString("user_id", "");
+        SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.USER_DATA, 0);
+        final String user_id = prefs.getString(LoginActivity.USER_ID, "");
 
         Call<User> loadUser = craveAPI.getUserProfile(user_id);
         loadUser.enqueue(new Callback<User>() {
@@ -132,9 +133,9 @@ public class ProfileFragment extends Fragment {
         btnProfileLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefs = getActivity().getSharedPreferences("UserData", 0);
+                SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.USER_DATA, 0);
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putBoolean("LOGGED_IN", false);
+                editor.putBoolean(LoginActivity.LOGGED_IN, false);
                 editor.apply();
 
                 Call<User> userLogOut = craveAPI.logOutUser();

@@ -68,8 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                             SharedPreferences prefs = getSharedPreferences("UserData", 0);
                             SharedPreferences.Editor editor = prefs.edit();
-                            editor.putString("email", email);
-                            editor.putString("user_id", response.body().getId());
+                            editor.putString(LoginActivity.EMAIL, email);
+                            editor.putString(LoginActivity.USER_ID, response.body().getId());
                             editor.apply();
 
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);

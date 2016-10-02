@@ -14,18 +14,14 @@ import android.Manifest;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     public static final int REQUEST_CODE_LOCATION_PERMISSION = 401;
-
     public static final String FRAGMENT_TAG = "FRAGMENT_TAG";
 
     CraveLocationManager craveLocationManager;
 
     private FrameLayout layoutContent;
     private BottomBar mBottomBar;
-
     private BottomBarAdapter bottomBarAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // display the given fragment
-        if(getIntent().getStringExtra("FRAGMENT_TAG") != null){
+        if(getIntent().getStringExtra(FRAGMENT_TAG) != null){
             this.bottomBarAdapter.showFragment(getIntent().getStringExtra(FRAGMENT_TAG));
         }
         else {

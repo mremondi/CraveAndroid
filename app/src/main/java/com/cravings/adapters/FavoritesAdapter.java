@@ -8,19 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.cravings.R;
-import com.cravings.data.Menu;
 import com.cravings.data.MenuItem;
 import com.cravings.data.Rating;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.RetrofitConnection;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder>{

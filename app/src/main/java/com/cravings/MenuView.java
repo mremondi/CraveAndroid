@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.TextView;
 import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.adapters.MenuSection;
@@ -19,10 +18,10 @@ import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapt
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MenuView extends AppCompatActivity {
+
+    public static final String MENU_ID = "MENU_ID";
 
     TextView testContent;
 
@@ -33,7 +32,6 @@ public class MenuView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_view);
-
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
         this.bottomBarAdapter = new BottomBarAdapter(mBottomBar, this);
@@ -46,7 +44,7 @@ public class MenuView extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = getIntent();
-        final String menuID = intent.getStringExtra("OBJECT ID");
+        final String menuID = intent.getStringExtra(MENU_ID);
 
         // set up retrofit
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
@@ -64,14 +62,12 @@ public class MenuView extends AppCompatActivity {
                             menuItemBySection.enqueue(new Callback<List<MenuItem>>() {
                                 @Override
                                 public void onResponse(Call<List<MenuItem>> call, Response<List<MenuItem>> response) {
-                                    if (response.body().size() > 0) {
-                                        Log.d("MENU ITEMS", response.body().toString());
-                                    }
+                                    if (response.body().size() > 0) { }
                                     sectionAdapter.addSection(new MenuSection(section, response.body(), new MenuSection.OnItemClickListener() {
                                         @Override
                                         public void onClick(MenuItem item) {
                                             Intent i = new Intent(getApplicationContext(), ItemView.class);
-                                            i.putExtra("OBJECT ID", item.getObjectID());
+                                            i.putExtra(ItemView.ITEM_ID, item.getObjectID());
                                             startActivity(i);
                                         }
                                     }));
@@ -80,7 +76,7 @@ public class MenuView extends AppCompatActivity {
 
                                 @Override
                                 public void onFailure(Call<List<MenuItem>> call, Throwable t) {
-                                    Log.d("SHOULD NOT BEHERE1", t.getMessage());
+
                                 }
                             });
                         }
@@ -89,7 +85,7 @@ public class MenuView extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<Menu> call, Throwable t) {
-                Log.d("SHOULD NOT BEHERE", t.getMessage());
+
             }
         });
     }

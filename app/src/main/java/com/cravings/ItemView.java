@@ -27,6 +27,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ItemView extends AppCompatActivity {
 
+    public static final String ITEM_ID = "ITEM_ID";
+
     private String restaurant_id;
     private String objectID;
 
@@ -51,7 +53,7 @@ public class ItemView extends AppCompatActivity {
         final TextView tvItemViewTags = (TextView) findViewById(R.id.tvItemViewTags);
 
         Intent intent = getIntent();
-        objectID = intent.getStringExtra("OBJECT ID");
+        objectID = intent.getStringExtra(ITEM_ID);
 
         // set up retrofit
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
@@ -72,7 +74,6 @@ public class ItemView extends AppCompatActivity {
                     }
                     tvItemViewTags.setText(sb.toString().trim());
                     rbItemViewRating.setRating(response.body().getRating() / response.body().getNumberOfRatings());
-                    Log.d("RATING", ""+response.body().getRating() / response.body().getNumberOfRatings());
                     restaurant_id = response.body().getRestaurantID();
                 }
             }
@@ -83,8 +84,8 @@ public class ItemView extends AppCompatActivity {
         if (rbItemViewRating != null) {
             rbItemViewRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
 
-                SharedPreferences prefs = getSharedPreferences("UserData", 0);
-                String user_id = prefs.getString("user_id", "");
+                SharedPreferences prefs = getSharedPreferences(LoginActivity.USER_DATA, 0);
+                String user_id = prefs.getString(LoginActivity.USER_ID, "");
 
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -111,7 +112,7 @@ public class ItemView extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(getApplicationContext(), RestaurantView.class);
-                    i.putExtra("RESTAURANT ID", restaurant_id);
+                    i.putExtra(RestaurantView.RESTAURANT_ID, restaurant_id);
                     startActivity(i);
                 }
             });
