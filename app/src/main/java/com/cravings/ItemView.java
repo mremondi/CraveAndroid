@@ -2,27 +2,21 @@ package com.cravings;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.IdRes;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.data.MenuItem;
-import com.cravings.fragments.NearMeFragment;
-import com.cravings.fragments.SearchFragment;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.RetrofitConnection;
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnMenuTabClickListener;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class ItemView extends AppCompatActivity {

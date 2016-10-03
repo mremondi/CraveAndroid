@@ -56,16 +56,19 @@ public class FavoritesFragment extends Fragment {
         ratingQuery.enqueue(new Callback<List<Rating>>() {
             @Override
             public void onResponse(Call<List<Rating>> call, Response<List<Rating>> response) {
-                FavoritesAdapter favoritesAdapter = new FavoritesAdapter(response.body(), getContext(),
-                        new FavoritesAdapter.OnItemClickListener() {
-                            @Override
-                            public void onClick(Rating rating) {
-                                Intent i = new Intent(getActivity(), ItemView.class);
-                                i.putExtra(ItemView.ITEM_ID, rating.getItemID());
-                                startActivity(i);
-                            }
-                        });
-                favoritesRecyclerView.setAdapter(favoritesAdapter);
+                if(response.body() == null){}
+                else {
+                    FavoritesAdapter favoritesAdapter = new FavoritesAdapter(response.body(), getContext(),
+                            new FavoritesAdapter.OnItemClickListener() {
+                                @Override
+                                public void onClick(Rating rating) {
+                                    Intent i = new Intent(getActivity(), ItemView.class);
+                                    i.putExtra(ItemView.ITEM_ID, rating.getItemID());
+                                    startActivity(i);
+                                }
+                            });
+                    favoritesRecyclerView.setAdapter(favoritesAdapter);
+                }
             }
 
             @Override

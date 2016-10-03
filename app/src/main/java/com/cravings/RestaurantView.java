@@ -1,11 +1,14 @@
 package com.cravings;
 
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.adapters.MenuRecyclerViewAdapter;
@@ -52,14 +55,29 @@ public class RestaurantView extends AppCompatActivity {
         Call<Restaurant> restaurantQuery = craveAPI.getRestaurantById(restaurantID);
         restaurantQuery.enqueue(new Callback<Restaurant>() {
             @Override
-            public void onResponse(Call<Restaurant> call, Response<Restaurant> response) {
+            public void onResponse(Call<Restaurant> call, final Response<Restaurant> response) {
                 if (response.body() == null) {}
                 else {
                     tvRestViewRestaurantName.setText("" + response.body().getRestaurantName());
                     for (String tag : response.body().getTags()){
                         tvRestViewTags.setText(tvRestViewTags.getText() + ", " + tag);
                     }
-                    tvRestViewAddress.setText("" + response.body().getAddress());
+                    tvRestViewAddress.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Uri gmmIntentUri = Uri.parse("geo:" +
+                                    response.body().getLoc().getCoordinates()[1] +
+                                    "," +
+                                    response.body().getLoc().getCoordinates()[0] +
+                                    "?q=" +
+                                    response.body().getAddress());
+                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                            mapIntent.setPackage("com.google.android.apps.maps");
+                            if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                                startActivity(mapIntent);
+                            }
+                        }
+                    });
                     tvRestViewURL.setText("" + response.body().getRestaurant_URL());
 
                     MenuRecyclerViewAdapter searchAdapter = new MenuRecyclerViewAdapter(

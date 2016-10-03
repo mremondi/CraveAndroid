@@ -9,6 +9,7 @@
         android:id="@+id/tvSearchFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         style="@style/TitleTheme"/>
 
     <LinearLayout
@@ -20,19 +21,21 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            style="@style/EditTextStyle"
             android:hint="@string/search_hint"/>
         <Button
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/InAppButtonStyle"
+            style="@style/FlatButtonStyle"
             android:text="@string/search_btnSearch"/>
     </LinearLayout>
 
     <Spinner
         android:id="@+id/spFilter"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog">
 
     </Spinner>
 

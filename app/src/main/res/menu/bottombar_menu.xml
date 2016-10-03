@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/nav_bar_featured"
-        android:icon="@drawable/ic_star_border_white_24dp"
-        android:title="@string/bb_featured" />
+    <!--<item-->
+        <!--android:id="@+id/nav_bar_featured"-->
+        <!--android:icon="@drawable/ic_star_border_white_24dp"-->
+        <!--android:title="@string/bb_featured" />-->
 
     <item
         android:id="@+id/nav_bar_near_me"

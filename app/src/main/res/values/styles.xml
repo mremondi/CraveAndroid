@@ -3,11 +3,26 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorAccent</item>
+    </style>
+
+    
+    <style name="TextViewStyle" parent="AppTheme">
+        <item name="android:background">@drawable/textview_style</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+
+    <style name="EditTextStyle" parent="AppTheme">
+        <item name="android:background">@drawable/edittext_style</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textSize">18dp</item>
     </style>
 
     <style name="TitleTheme" parent="AppTheme">
         <item name="android:textSize">34sp</item>
-        <item name="android:color">@color/titleColor</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -17,22 +32,34 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="SubTitleTheme" parent="TitleTheme">
+    <style name="SubTitleTheme" parent="TextViewStyle">
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="NormalTextTheme">
+    <style name="NormalTextTheme" parent="TextViewStyle">
         <item name="android:textSize">18sp</item>
-        <item name="android:color">#6e4c34</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
     <style name="NormalTextThemeBold" parent="NormalTextTheme">
         <item name="android:textStyle">bold</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="FlatButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="InAppButtonStyle" parent="AppTheme">
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ProfileButtonStyle" parent="InAppButtonStyle">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:background">@drawable/button_style</item>
     </style>
 
     <style name="LoginButtonStyle" parent="InAppButtonStyle">
@@ -43,8 +70,6 @@
     <style name="RowStyle" parent="AppTheme">
         <item name="android:padding">10dp</item>
     </style>
-
-
 
     <style name="RatingBar" parent="AppTheme">
         <item name="colorControlNormal">@color/colorPrimary</item>

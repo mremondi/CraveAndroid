@@ -34,9 +34,6 @@ public class BottomBarAdapter {
             if (tag.equals(SearchFragment.TAG)) {
                 fragment = new SearchFragment();
             }
-            else if (tag.equals(FeaturedFragment.TAG)) {
-                fragment = new FeaturedFragment();
-            }
             else if (tag.equals(FavoritesFragment.TAG)) {
                 fragment = new FavoritesFragment();
             }
@@ -58,15 +55,11 @@ public class BottomBarAdapter {
     public void setUpBottomBarMain(){
         mBottomBar.noNavBarGoodness();
         mBottomBar.setItems(R.menu.bottombar_menu);
-        mBottomBar.setDefaultTabPosition(2);
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    // go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    showFragment(NearMeFragment.TAG);
+                if(menuItemId == R.id.nav_bar_near_me) {
+//                    showFragment(NearMeFragment.TAG);
                 }
                 else if(menuItemId == R.id.nav_bar_search) {
                     showFragment(SearchFragment.TAG);
@@ -81,10 +74,7 @@ public class BottomBarAdapter {
 
             @Override
             public void onMenuTabReSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    //go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
+                if(menuItemId == R.id.nav_bar_near_me) {
                     showFragment(NearMeFragment.TAG);
                 }
                 else if(menuItemId == R.id.nav_bar_search) {
@@ -106,13 +96,10 @@ public class BottomBarAdapter {
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    // go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
-                    Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
-                    i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
-                    activity.startActivity(i);
+                if (menuItemId == R.id.nav_bar_near_me) {
+//                    Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
+//                    i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
+//                    activity.startActivity(i);
                 }
                 else if(menuItemId == R.id.nav_bar_search) {
                     Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
@@ -133,10 +120,7 @@ public class BottomBarAdapter {
 
             @Override
             public void onMenuTabReSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.nav_bar_featured) {
-                    //go to featured fragment
-                }
-                else if(menuItemId == R.id.nav_bar_near_me) {
+                if(menuItemId == R.id.nav_bar_near_me) {
                     Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
                     i.putExtra(MainActivity.FRAGMENT_TAG, NearMeFragment.TAG);
                     activity.startActivity(i);
