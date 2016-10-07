@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.cravings.R;
 import com.cravings.RestaurantView;
+import com.cravings.adapters.CraveLocationManager;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.RetrofitConnection;
@@ -21,17 +22,13 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-
 import java.util.HashMap;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by mremondi on 7/25/16.
@@ -45,6 +42,8 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
 
     private MapView mapView;
     private GoogleMap googleMap;
+
+    private CraveLocationManager craveLocationManager;
 
     @Nullable
     @Override
@@ -63,6 +62,7 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
         mapView.getMapAsync(this);
+
     }
 
     @Subscribe
@@ -105,6 +105,9 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
         googleMap = map;
         try {
             googleMap.setMyLocationEnabled(true);
+            if (location != null){
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)14));
+            }
             googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                 @Override
                 public void onInfoWindowClick(Marker marker) {

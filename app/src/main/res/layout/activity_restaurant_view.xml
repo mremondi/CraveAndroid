@@ -52,17 +52,25 @@
 
     </LinearLayout>
 
+
+    <TextView
+        android:id="@+id/tvRestViewTagsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rv_container"
+        style="@style/NormalTextThemeBold"
+        android:text="Cuisine Tags"/>
     <TextView
         android:id="@+id/tvRestViewTags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rv_container"/>
+        android:layout_below="@id/tvRestViewTagsLabel"/>
 
-    <RatingBar
-        android:id="@+id/rbRestViewRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRestViewTags"/>
+    <!--<RatingBar-->
+        <!--android:id="@+id/rbRestViewRating"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/tvRestViewTags"/>-->
 
     <!--
     TODO: We want this eventually but first we must be able to get the average
@@ -78,7 +86,7 @@
         android:id="@+id/tvRestViewAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rbRestViewRating"
+        android:layout_below="@+id/tvRestViewTags"
         android:text="Get Directions"
         android:drawableRight="@drawable/ic_directions_black_24dp"
         android:layout_marginBottom="4dp"

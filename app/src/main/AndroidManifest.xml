@@ -27,7 +27,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAxJ1OerhhJXW2nSPb3XG6xuMoGJ8k_r1M" />
 
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,14 +35,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".ItemView" />
-        <activity android:name=".RestaurantView" />
-        <activity android:name=".MenuView" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ItemView" android:screenOrientation="portrait"/>
+        <activity android:name=".RestaurantView" android:screenOrientation="portrait"/>
+        <activity android:name=".MenuView" android:screenOrientation="portrait"/>
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RegisterActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

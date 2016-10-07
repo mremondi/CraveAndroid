@@ -60,7 +60,7 @@ public class RestaurantView extends AppCompatActivity {
                 else {
                     tvRestViewRestaurantName.setText("" + response.body().getRestaurantName());
                     for (String tag : response.body().getTags()){
-                        tvRestViewTags.setText(tvRestViewTags.getText() + ", " + tag);
+                        tvRestViewTags.setText(tag + "\n");
                     }
                     tvRestViewAddress.setOnClickListener(new View.OnClickListener() {
                         @Override

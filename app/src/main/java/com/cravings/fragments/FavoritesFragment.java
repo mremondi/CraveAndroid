@@ -41,12 +41,12 @@ public class FavoritesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.favorites_fragment, null, false);
 
-
         final RecyclerView favoritesRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv_favorites);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
         favoritesRecyclerView.setLayoutManager(linearLayoutManager);
 
-        SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.LOGGED_IN, 0);
+        SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.USER_DATA, 0);
+        boolean loggedIn = prefs.getBoolean(LoginActivity.LOGGED_IN, false);
         String user_id = prefs.getString(LoginActivity.USER_ID, "");
 
         // set up retrofit

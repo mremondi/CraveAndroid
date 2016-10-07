@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.cravings.MainActivity;
 import com.cravings.R;
 import com.cravings.fragments.FavoritesFragment;
-import com.cravings.fragments.FeaturedFragment;
 import com.cravings.fragments.NearMeFragment;
 import com.cravings.fragments.ProfileFragment;
 import com.cravings.fragments.SearchFragment;

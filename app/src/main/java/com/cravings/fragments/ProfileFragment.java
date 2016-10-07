@@ -77,8 +77,8 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Call<User> postUserChanges = craveAPI.updateUser(etProfileName.getText().toString(),
-                                                                etProfileEmail.getText().toString(),
-                                                                user_id);
+                                                                 etProfileEmail.getText().toString(),
+                                                                 user_id);
                 postUserChanges.enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
@@ -107,21 +107,31 @@ public class ProfileFragment extends Fragment {
                 btnProfileChangePassword.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (!etProfilePassword1.getText().toString().equals(etProfilePassword2.getText().toString())){
-                            Toast.makeText(rootView.getContext(), "Passwords do not match.", Toast.LENGTH_SHORT).show();
+                        if (etProfilePassword1.getText().toString().equals("")){
+                            Toast.makeText(rootView.getContext(),
+                                    "Please enter a password with at least 4 characters",
+                                    Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Call<User> updatePassword = craveAPI.updatePassword(etProfilePassword1.getText().toString(), user_id);
+                        if (!etProfilePassword1.getText().toString().equals(etProfilePassword2.getText().toString())){
+                            Toast.makeText(rootView.getContext(),
+                                    "Passwords do not match.",
+                                    Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        Call<User> updatePassword = craveAPI.updatePassword(
+                                etProfilePassword1.getText().toString(),
+                                user_id);
                         updatePassword.enqueue(new Callback<User>() {
                             @Override
                             public void onResponse(Call<User> call, Response<User> response) {
-                                Toast.makeText(rootView.getContext(), "Password has been changed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(rootView.getContext(),
+                                        "Password has been changed",
+                                        Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
-                            public void onFailure(Call<User> call, Throwable t) {
-
-                            }
+                            public void onFailure(Call<User> call, Throwable t) { }
                         });
                     }
                 });
@@ -144,6 +154,7 @@ public class ProfileFragment extends Fragment {
                     public void onResponse(Call<User> call, Response<User> response) {
                         Intent i = new Intent(rootView.getContext(), SplashActivity.class);
                         startActivity(i);
+                        getActivity().finish();
                     }
 
                     @Override

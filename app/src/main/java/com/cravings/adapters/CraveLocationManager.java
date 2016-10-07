@@ -22,16 +22,16 @@ public class CraveLocationManager implements LocationListener {
 
     public void startLocationMonitoring() throws SecurityException {
         locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 1000, this);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10000, 1000, this);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 1000, this);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 1000, this);
     }
+
 
     public void stopLocationMonitoring() throws SecurityException {
         if (locationManager != null) {
             locationManager.removeUpdates(this);
         }
     }
-
 
     @Override
     public void onLocationChanged(Location location) {

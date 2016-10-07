@@ -6,7 +6,6 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,6 +28,7 @@ public class SplashActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable(){
                 @Override
                 public void run() {
+                    // TODO: LOG IN THE USER HERE
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
             }, 3000);

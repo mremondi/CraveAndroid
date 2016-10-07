@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +41,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     private TextView tvSearchFragmentTitle;
 
     private String filter;
-    private boolean searchItem = true;
+    private boolean searchItems = true;
 
     private LatLng location;
 
@@ -52,7 +51,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         View rootView = inflater.inflate(R.layout.search_fragment, null, false);
 
         // Set up spinner
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.spFilter);
+        final Spinner spinner = (Spinner) rootView.findViewById(R.id.spFilter);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getContext(),
                 R.array.filter_choices, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -76,12 +75,13 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         tvSearchFragmentTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                searchItem = !searchItem;
-                if (searchItem){
+                searchItems = !searchItems;
+                if (searchItems){
                     tvSearchFragmentTitle.setText(R.string.searchview_mealSearch);
                 }
                 else{
                     tvSearchFragmentTitle.setText(R.string.searchview_restaurantSearch);
+                    spinner.setVisibility(View.GONE);
                 }
             }
         });
@@ -92,7 +92,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
                 if (etSearch.getText().toString().equals("")){
                     return;
                 }
-                if (searchItem) {
+                if (searchItems) {
                     // TODO: if location is not initialized yet, it will crash without this
                     // if statement. Figure out a way to get location as soon as app is opened and
                     // persist it
@@ -163,6 +163,12 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
     }
 
     @Override
