@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -34,27 +35,21 @@ public class SplashActivity extends AppCompatActivity {
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
         if (prefs.getBoolean(LoginActivity.LOGGED_IN, false)){
-            new Handler().postDelayed(new Runnable(){
+            Call<User> loginUser = craveAPI.loginUser(
+                    prefs.getString(LoginActivity.EMAIL,""),
+                    prefs.getString(LoginActivity.PASSWORD, ""));
+            loginUser.enqueue(new Callback<User>() {
                 @Override
-                public void run() {
-                    Call<User> loginUser = craveAPI.loginUser(
-                            prefs.getString(LoginActivity.EMAIL,""),
-                            prefs.getString(LoginActivity.PASSWORD, ""));
-                    loginUser.enqueue(new Callback<User>() {
-                        @Override
-                        public void onResponse(Call<User> call, Response<User> response) {
-                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                        }
+                public void onResponse(Call<User> call, Response<User> response) {
+                    Log.d("USER LOGGED IN", response.body().getEmail());
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                }
 
-                        @Override
-                        public void onFailure(Call<User> call, Throwable t) {
-
-                        }
-                    });
-
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
 
                 }
-            }, 3000);
+            });
         }
         else{
             btnLogin.setVisibility(View.VISIBLE);

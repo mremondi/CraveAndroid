@@ -106,7 +106,7 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
         try {
             googleMap.setMyLocationEnabled(true);
             if (location != null){
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)14));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)12));
             }
             googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                 @Override
@@ -122,9 +122,7 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public void onStart() {
         super.onStart();
-        if (this.location != null) {
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float) 14));
-        }
+
         EventBus.getDefault().register(this);
     }
 

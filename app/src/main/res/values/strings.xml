@@ -27,6 +27,8 @@
     <string name="bb_profile">Profile</string>
     <string name="searchview_mealSearch">Meal Search</string>
     <string name="searchview_restaurantSearch">Restaurant Search</string>
+    <string name="item_search">Item Search</string>
+    <string name="restaurant_search">Restaurant Search</string>
 
     <string-array name="filter_choices">
         <item>Price: Low -> High</item>

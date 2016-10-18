@@ -18,10 +18,10 @@ public class CraveLocationManager implements LocationListener {
 
     public CraveLocationManager(Context context) {
         this.context = context;
+        locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
     }
 
     public void startLocationMonitoring() throws SecurityException {
-        locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 1000, this);
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 1000, this);
     }
