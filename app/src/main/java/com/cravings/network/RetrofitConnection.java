@@ -10,7 +10,7 @@ public class RetrofitConnection {
 
     public static CraveAPI setUpRetrofit(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://05eb7d7b.ngrok.io/api/")
+                .baseUrl("https://guarded-caverns-87227.herokuapp.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(CraveAPI.class);
@@ -18,3 +18,4 @@ public class RetrofitConnection {
 }
 
 // .baseUrl("http://10.0.2.2:3000/api/")
+// .baseUrl("http://05eb7d7b.ngrok.io/api/")

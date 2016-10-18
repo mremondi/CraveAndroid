@@ -37,12 +37,9 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
     public static final String TAG = "NearMeFragment";
 
     private HashMap<Marker, Restaurant> markerRestaurantHashMap;
-
     private LatLng location;
-
     private MapView mapView;
     private GoogleMap googleMap;
-
     private CraveLocationManager craveLocationManager;
 
     @Nullable
@@ -50,6 +47,8 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.near_me_fragment, null, false);
 
+        craveLocationManager = new CraveLocationManager(this.getContext());
+        location = craveLocationManager.getLastKnownLocation();
         markerRestaurantHashMap = new HashMap<>();
 
         return rootView;
@@ -68,7 +67,8 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
     @Subscribe
     public void onLocationReceived(Location location) {
         this.location = new LatLng(location.getLatitude(), location.getLongitude());
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)14));
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)10));
 
         // set up retrofit
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();

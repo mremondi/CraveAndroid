@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.cravings.ItemView;
 import com.cravings.R;
 import com.cravings.RestaurantView;
+import com.cravings.adapters.CraveLocationManager;
 import com.cravings.adapters.SearchAdapter;
 import com.cravings.adapters.SearchRestaurantAdapter;
 import com.cravings.data.MenuItem;
@@ -43,12 +44,17 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     private String filter;
     private boolean searchItems = true;
 
+    private CraveLocationManager craveLocationManager;
+
     private LatLng location;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.search_fragment, null, false);
+
+        craveLocationManager = new CraveLocationManager(this.getContext());
+        location = craveLocationManager.getLastKnownLocation();
 
         // Set up spinner
         final Spinner spinner = (Spinner) rootView.findViewById(R.id.spFilter);

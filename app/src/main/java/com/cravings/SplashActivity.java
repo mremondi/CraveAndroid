@@ -9,6 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import com.cravings.data.User;
+import com.cravings.network.CraveAPI;
+import com.cravings.network.RetrofitConnection;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,13 +29,30 @@ public class SplashActivity extends AppCompatActivity {
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
         Button btnRegister = (Button) findViewById(R.id.btnRegister);
-        SharedPreferences prefs = getSharedPreferences(LoginActivity.USER_DATA, 0);
+        final SharedPreferences prefs = getSharedPreferences(LoginActivity.USER_DATA, 0);
+
+        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+
         if (prefs.getBoolean(LoginActivity.LOGGED_IN, false)){
             new Handler().postDelayed(new Runnable(){
                 @Override
                 public void run() {
-                    // TODO: LOG IN THE USER HERE
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    Call<User> loginUser = craveAPI.loginUser(
+                            prefs.getString(LoginActivity.EMAIL,""),
+                            prefs.getString(LoginActivity.PASSWORD, ""));
+                    loginUser.enqueue(new Callback<User>() {
+                        @Override
+                        public void onResponse(Call<User> call, Response<User> response) {
+                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        }
+
+                        @Override
+                        public void onFailure(Call<User> call, Throwable t) {
+
+                        }
+                    });
+
+
                 }
             }, 3000);
         }

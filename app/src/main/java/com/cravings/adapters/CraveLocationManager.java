@@ -5,7 +5,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-
+import com.google.android.gms.maps.model.LatLng;
 import org.greenrobot.eventbus.EventBus;
 
 /**
@@ -30,6 +30,16 @@ public class CraveLocationManager implements LocationListener {
     public void stopLocationMonitoring() throws SecurityException {
         if (locationManager != null) {
             locationManager.removeUpdates(this);
+        }
+    }
+
+    public LatLng getLastKnownLocation(){
+        try {
+            return new LatLng(
+                    locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER).getLatitude(),
+                    locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER).getLongitude());
+        }catch (SecurityException e){
+            return null;
         }
     }
 

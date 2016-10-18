@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String USER_DATA = "USER_DATA";
     public static final String USER_ID = "USER_ID";
     public static final String EMAIL = "EMAIL";
+    public static final String PASSWORD = "PASSWORD";
     public static final String LOGGED_IN = "LOGGED_IN";
 
     @Override
@@ -35,9 +36,11 @@ public class LoginActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences(USER_DATA, 0);
         String email = prefs.getString(EMAIL, "");
+        String password = prefs.getString(PASSWORD, "");
         String user_id = prefs.getString(USER_ID, "");
 
         etLoginEmail.setText(email);
+        etLoginPassword.setText(password);
 
 
         // set up retrofit
@@ -76,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                               SharedPreferences prefs = getSharedPreferences(USER_DATA, 0);
                               SharedPreferences.Editor editor = prefs.edit();
                               editor.putString(EMAIL, email);
+                              editor.putString(PASSWORD, password);
                               editor.putString(USER_ID, response.body().getId());
                               editor.putBoolean(LOGGED_IN, true);
                               editor.apply();

@@ -69,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                             SharedPreferences prefs = getSharedPreferences("UserData", 0);
                             SharedPreferences.Editor editor = prefs.edit();
                             editor.putString(LoginActivity.EMAIL, email);
+                            editor.putString(LoginActivity.PASSWORD, password);
                             editor.putString(LoginActivity.USER_ID, response.body().getId());
                             editor.apply();
 
