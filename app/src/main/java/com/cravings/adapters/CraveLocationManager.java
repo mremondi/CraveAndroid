@@ -35,10 +35,16 @@ public class CraveLocationManager implements LocationListener {
 
     public LatLng getLastKnownLocation(){
         try {
+            try{
             return new LatLng(
                     locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER).getLatitude(),
                     locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER).getLongitude());
-        }catch (SecurityException e){
+            }catch (NullPointerException e1) {
+                return new LatLng(
+                        locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLatitude(),
+                        locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLongitude());
+            }
+        } catch (SecurityException e){
             return null;
         }
     }

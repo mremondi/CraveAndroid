@@ -295,7 +295,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="91486ee8e6cda0227bfdc05c8b46ad893b154512">
+        sha1="44899c0f869c2bacc4ed133eca616a2e538e9b58">
         <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_04adb4de38651c3ec3dff939c6ec333567226f5f/classes.dex" />
     </item>
     <item
@@ -439,7 +439,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e34474b810a4838c1c6c3a2f46cb2cd7ff2e281b">
+        sha1="e6a957e7596f45bcd552f5fd30821be4bab2e8a2">
         <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_44a2f234bff728a9207066990c0a6b94de64fc87/classes.dex" />
     </item>
     <item

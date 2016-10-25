@@ -4,6 +4,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,9 @@ public class SearchFragment extends Fragment {
 
         craveLocationManager = new CraveLocationManager(this.getContext());
         location = craveLocationManager.getLastKnownLocation();
+
+        PagerTabStrip pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pagerTabStrip);
+        pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.colorPrimary));
 
         ViewPager mViewPager = (ViewPager) rootView.findViewById(R.id.searchViewPager);
         mViewPager.setAdapter(new SearchPagerAdapter(getChildFragmentManager()));

@@ -2,7 +2,6 @@ package com.cravings;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,7 +23,7 @@ public class ItemView extends AppCompatActivity {
     public static final String ITEM_ID = "ITEM_ID";
 
     private String restaurant_id;
-    private String objectID;
+    private String itemID;
 
     private BottomBarAdapter bottomBarAdapter;
     private BottomBar mBottomBar;
@@ -47,12 +46,12 @@ public class ItemView extends AppCompatActivity {
         final TextView tvItemViewTags = (TextView) findViewById(R.id.tvItemViewTags);
 
         Intent intent = getIntent();
-        objectID = intent.getStringExtra(ITEM_ID);
+        itemID = intent.getStringExtra(ITEM_ID);
 
         // set up retrofit
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
-        Call<MenuItem> itemQuery = craveAPI.getItemById(objectID);
+        Call<MenuItem> itemQuery = craveAPI.getItemById(itemID);
         itemQuery.enqueue(new Callback<MenuItem>() {
             @Override
             public void onResponse(Call<MenuItem> call, Response<MenuItem> response) {
@@ -84,7 +83,9 @@ public class ItemView extends AppCompatActivity {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     if (fromUser) {
-                        Call<MenuItem> putRating = craveAPI.rateItem(objectID, rating, user_id);
+                        Log.d("ITEM ID", itemID);
+                        Log.d("USER ID", user_id);
+                        Call<MenuItem> putRating = craveAPI.rateItem(itemID, rating, user_id);
                         putRating.enqueue(new Callback<MenuItem>() {
                             @Override
                             public void onResponse(Call<MenuItem> call, Response<MenuItem> response) {

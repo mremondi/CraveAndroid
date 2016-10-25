@@ -72,7 +72,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             if (Float.isNaN(item.getRating() / item.getNumberOfRatings()) ){
                 tvSearchRowItemRating.setText("No Ratings");
             }
-            tvSearchRowItemRating.setText("" + Math.round(item.getRating() / item.getNumberOfRatings() * 10.0)/10.0 + "/5");
+            tvSearchRowItemRating.setText("" + Math.round(item.getRating() / item.getNumberOfRatings() * 10.0)/10.0);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -28,8 +28,8 @@ public class SplashActivity extends AppCompatActivity {
         Typeface font = Typeface.createFromAsset(getAssets(), "Milkshake.ttf");
         tvSplashTitle.setTypeface(font);
 
-        Button btnLogin = (Button) findViewById(R.id.btnLogin);
-        Button btnRegister = (Button) findViewById(R.id.btnRegister);
+        final Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        final Button btnRegister = (Button) findViewById(R.id.btnRegister);
         final SharedPreferences prefs = getSharedPreferences(LoginActivity.USER_DATA, 0);
 
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
@@ -47,7 +47,22 @@ public class SplashActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
+                    btnLogin.setVisibility(View.VISIBLE);
+                    btnRegister.setVisibility(View.VISIBLE);
+                    btnLogin.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                        }
+                    });
 
+
+                    btnRegister.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                        }
+                    });
                 }
             });
         }

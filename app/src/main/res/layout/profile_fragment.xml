@@ -9,13 +9,16 @@
         android:id="@+id/etProfileName"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/ProfileEditTextStyle"/>
 
     <EditText
         android:id="@+id/etProfileEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etProfileName"
+        style="@style/ProfileEditTextStyle"
         android:inputType="textEmailAddress"/>
 
     <EditText
@@ -25,6 +28,7 @@
         android:layout_below="@+id/etProfileEmail"
         android:visibility="invisible"
         android:inputType="textPassword"
+        style="@style/ProfileEditTextStyle"
         android:hint="@string/profile_password1Hint"/>
 
     <EditText
@@ -34,6 +38,7 @@
         android:layout_below="@+id/etProfilePassword1"
         android:visibility="invisible"
         android:inputType="textPassword"
+        style="@style/ProfileEditTextStyle"
         android:hint="@string/profile_password2Hint"/>
 
     <Button

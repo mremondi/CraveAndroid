@@ -27,7 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            style="@style/NormalTextThemeBold"/>
+            style="@style/NormalTextThemeBold"
+            android:lines="1"
+            android:ellipsize="end"/>
 
         <TextView
             android:id="@+id/tvSearchRowPrice"
@@ -43,6 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/tvSearchRowPrice"
             style="@style/NormalTextThemeBold"/>
+
+        <!--TODO: Should contain the distance from the user-->
 
     </RelativeLayout>
 

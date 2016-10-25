@@ -32,7 +32,7 @@ import retrofit2.Response;
  */
 
 public class RestaurantSearchFragment extends Fragment {
-    public static final String TITLE = "RESTAURANT_SEARCH";
+    public static final String TITLE = "Restaurant Search";
 
     private EditText etSearch;
     private Button btnSearch;
@@ -56,8 +56,6 @@ public class RestaurantSearchFragment extends Fragment {
 
         etSearch = (EditText) rootView.findViewById(R.id.etSearch);
         btnSearch = (Button) rootView.findViewById(R.id.btnSearch);
-        tvSearchFragmentTitle = (TextView) rootView.findViewById(R.id.tvSearchFragmentTitle);
-
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -28,13 +28,25 @@
             <TextView
                 android:id="@+id/tvMenuViewItemName"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                style="@style/NormalTextThemeBold"
+                android:lines="1"
+                android:ellipsize="end" />
 
             <TextView
                 android:id="@+id/tvMenuViewItemPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:paddingLeft="4dp"
+                style="@style/NormalTextThemeBold"/>
+
+            <TextView
+                android:id="@+id/tvMenuViewItemRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tvMenuViewItemPrice"
+                style="@style/NormalTextThemeBold"/>
 
         </RelativeLayout>
     </LinearLayout>

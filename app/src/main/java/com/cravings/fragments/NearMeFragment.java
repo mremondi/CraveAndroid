@@ -47,9 +47,10 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.near_me_fragment, null, false);
 
+        markerRestaurantHashMap = new HashMap<>();
+
         craveLocationManager = new CraveLocationManager(this.getContext());
         location = craveLocationManager.getLastKnownLocation();
-        markerRestaurantHashMap = new HashMap<>();
 
         return rootView;
     }
@@ -67,13 +68,17 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
     @Subscribe
     public void onLocationReceived(Location location) {
         this.location = new LatLng(location.getLatitude(), location.getLongitude());
+        loadRestaurantsByLatLng();
+    }
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)10));
+    public void loadRestaurantsByLatLng(){
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)12));
 
         // set up retrofit
         final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
 
-        Call<List<Restaurant>> restaurantQuery = craveAPI.getNearbyRestaurants(location.getLatitude(), location.getLongitude()); // (lat, long)
+        Call<List<Restaurant>> restaurantQuery = craveAPI.getNearbyRestaurants(location.latitude,
+                                                                                location.longitude);
         restaurantQuery.enqueue(new Callback<List<Restaurant>>() {
             @Override
             public void onResponse(Call<List<Restaurant>> call, Response<List<Restaurant>> response) {
@@ -106,7 +111,7 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
         try {
             googleMap.setMyLocationEnabled(true);
             if (location != null){
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)12));
+                loadRestaurantsByLatLng();
             }
             googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                 @Override

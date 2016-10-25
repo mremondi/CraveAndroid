@@ -46,6 +46,11 @@
         <item name="android:background">#FFFFFF</item>
     </style>
 
+    <style name="ViewPagerSubTitle" parent="SubTitleTheme">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
     <style name="FlatButtonStyle" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
@@ -60,6 +65,12 @@
         <item name="android:layout_marginLeft">8dp</item>
         <item name="android:layout_marginRight">8dp</item>
         <item name="android:background">@drawable/button_style</item>
+    </style>
+
+    <style name="ProfileEditTextStyle" parent="EditTextStyle">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
     </style>
 
     <style name="LoginButtonStyle" parent="InAppButtonStyle">

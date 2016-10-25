@@ -33,7 +33,7 @@ import retrofit2.Response;
  */
 
 public class ItemSearchFragment extends Fragment implements AdapterView.OnItemSelectedListener{
-    public static final String TITLE = "ITEM_SEARCH";
+    public static final String TITLE = "Item Search";
 
     private LatLng location;
 
@@ -71,7 +71,6 @@ public class ItemSearchFragment extends Fragment implements AdapterView.OnItemSe
         // set up views
         etSearch = (EditText) rootView.findViewById(R.id.etSearch);
         btnSearch = (Button) rootView.findViewById(R.id.btnSearch);
-        tvSearchFragmentTitle = (TextView) rootView.findViewById(R.id.tvSearchFragmentTitle);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override

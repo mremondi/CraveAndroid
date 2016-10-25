@@ -43,6 +43,8 @@ public class MenuSection extends StatelessSection {
         SectionItemViewHolder sectionItemViewHolder = (SectionItemViewHolder) holder;
         sectionItemViewHolder.tvMenuItemName.setText(items.get(position).getName());
         sectionItemViewHolder.tvMenuItemPrice.setText(items.get(position).getPrice());
+        sectionItemViewHolder.tvMenuItemRating.setText("" + Math.round(items.get(position).getRating()
+                / items.get(position).getNumberOfRatings() * 10.0)/10.0);
         sectionItemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,11 +68,13 @@ public class MenuSection extends StatelessSection {
     public static class SectionItemViewHolder extends RecyclerView.ViewHolder{
         private final TextView tvMenuItemName;
         private final TextView tvMenuItemPrice;
+        private final TextView tvMenuItemRating;
 
         public SectionItemViewHolder(View itemView) {
             super(itemView);
             tvMenuItemName = (TextView) itemView.findViewById(R.id.tvMenuViewItemName);
             tvMenuItemPrice = (TextView) itemView.findViewById(R.id.tvMenuViewItemPrice);
+            tvMenuItemRating = (TextView) itemView.findViewById(R.id.tvMenuViewItemRating);
         }
     }
 
