@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,7 +84,6 @@ public class ItemSearchFragment extends Fragment implements AdapterView.OnItemSe
                         public void onResponse(Call<List<MenuItem>> call, Response<List<MenuItem>> response) {
                             if (response.body() == null) {
                             } else {
-                                Log.d("onResponse: ", response.body().toString());
                                 SearchAdapter searchAdapter = new SearchAdapter(response.body(), getContext(),
                                         new SearchAdapter.OnItemClickListener() {
                                             @Override
@@ -100,9 +98,7 @@ public class ItemSearchFragment extends Fragment implements AdapterView.OnItemSe
                         }
 
                         @Override
-                        public void onFailure(Call<List<MenuItem>> call, Throwable t) {
-                            Log.d("onFailure", t.getMessage());
-                        }
+                        public void onFailure(Call<List<MenuItem>> call, Throwable t) { }
                     });
                 }
             }

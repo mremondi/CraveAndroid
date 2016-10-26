@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.TextView;
 import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.adapters.MenuSection;
@@ -88,12 +87,10 @@ public class MenuView extends AppCompatActivity {
                     }
                     // there are no sections
                     else{
-                        Log.d("IN ", "Else");
                         Call<List<MenuItem>> menuItemBySection = craveAPI.getMenuItems(menuID);
                         menuItemBySection.enqueue(new Callback<List<MenuItem>>() {
                             @Override
                             public void onResponse(Call<List<MenuItem>> call, Response<List<MenuItem>> response) {
-                                Log.d("HERE", "IN OnResponse");
                                 sectionAdapter.addSection(new MenuSection("", response.body(), new MenuSection.OnItemClickListener() {
                                     @Override
                                     public void onClick(MenuItem item) {

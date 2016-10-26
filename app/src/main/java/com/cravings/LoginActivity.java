@@ -12,12 +12,9 @@ import android.widget.Toast;
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.RetrofitConnection;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
     public static final String USER_DATA = "USER_DATA";

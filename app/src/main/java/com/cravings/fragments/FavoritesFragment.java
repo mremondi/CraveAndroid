@@ -7,28 +7,20 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.cravings.ItemView;
 import com.cravings.LoginActivity;
 import com.cravings.R;
 import com.cravings.adapters.FavoritesAdapter;
-import com.cravings.adapters.SearchAdapter;
-import com.cravings.data.MenuItem;
 import com.cravings.data.Rating;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.RetrofitConnection;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by mremondi on 7/25/16.
@@ -73,7 +65,7 @@ public class FavoritesFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Rating>> call, Throwable t) {
-                Log.d("FAILURE", t.getMessage());
+                //Log.d("FAILURE", t.getMessage());
             }
         });
                 // USE THE RATINGS TO GET EACH ITEM WITH THE CURRENT USER'S RATING

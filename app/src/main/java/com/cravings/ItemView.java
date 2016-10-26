@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -83,8 +82,6 @@ public class ItemView extends AppCompatActivity {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     if (fromUser) {
-                        Log.d("ITEM ID", itemID);
-                        Log.d("USER ID", user_id);
                         Call<MenuItem> putRating = craveAPI.rateItem(itemID, rating, user_id);
                         putRating.enqueue(new Callback<MenuItem>() {
                             @Override
@@ -93,9 +90,7 @@ public class ItemView extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onFailure(Call<MenuItem> call, Throwable t) {
-                                Log.d("FAILED TO PUT", "RATING");
-                            }
+                            public void onFailure(Call<MenuItem> call, Throwable t) {}
                         });
                     }
                 }

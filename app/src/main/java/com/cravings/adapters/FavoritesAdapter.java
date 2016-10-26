@@ -2,7 +2,6 @@ package com.cravings.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,7 +94,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
 
                 @Override
                 public void onFailure(Call<MenuItem> call, Throwable t) {
-                    Log.d("Failed FavoritesAdapter", t.getMessage());
+                    //Log.d("Failed FavoritesAdapter", t.getMessage());
                 }
             });
 

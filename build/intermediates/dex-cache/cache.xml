@@ -3,12 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="764d32faf85bc6f7bd2cdcb3a70a482c1884fdd2">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.0.2_c541a4a30d4e63d95d39e7bcd534de87762e006f/classes.dex" />
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.8.0_1b8efe234822bb0a3888508c6d4b40b54cf6df4f/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -21,159 +21,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-23.0.0_10f2532a1b909282756ba2f3a848fa446c41a812/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="b6af089f583d547bcffc0689b2e80bc7aaa54b15">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.0.2_febd171c36983cec015ab83093adf17e11770abf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e6970f0554f9508c041f1f6960af15cc888c9f35">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.0.2_f0acea962fdeb1e30fd3a3521caff1f0970e7bbd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.0-beta4/de5935a367ba5e343e9df786ac8fc0c7d52b5f0c/converter-gson-2.0.0-beta4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="de5935a367ba5e343e9df786ac8fc0c7d52b5f0c">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.0-beta4_75ef0b2dc7ad32f553dc084672b23c3eca7e9d33/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="f399a2fde7888450cadcaec4974bfd169d8cce43">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.0.2_8b02e30e2f99d93ac4102812c581d87ed7684e0c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="6ff48ef26bc539c78af4aa061cb9bad6abcbf5e8">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.0.2_da10825d7c67fa0330d6239de554ea943f501e9d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fa472b7cbd3897bf6bed6068ac0b00e494987688">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.0.2_9d39bcdac174a1cdaf44cc523eae2d1271ca2140/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_80936a5b5b39311f19983287a609485290184da7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="568d5bda0b4d51f90d978ace369bb9ad024d2057">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.0.2_42cbc740010614da54654376137727c0bd534c65/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_354db05163287b28dea904d5710ab893906055a9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="143813b18381b28de1e04aae1d92fcb374a0add9">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.0.2_fc02de5298420821bb15d132fb1fc5c1da21c959/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="2ab5be19bbd34bae74662ea6b2d4451314d92d97">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.0.2_7adab61161efe28b5674c1b849a380a272f02dbc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="f4fb6981392ca7680d02fd57d26d6124c141d9d9">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.0.2_aebf02045d8b4776b98541b4d732c1036956378d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="53f10fcd322a3931495d6ca2078a81f4957cdbce">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.0.2_7fd76bab8cf8c25ce103627ba64a745f8d5a5427/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="a511c684ea4c2cf31a3377d51e7677cb76696e07">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.0.2_7358f0ffdb069922a0262d903bb6db74dac24758/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="a498fab72f8663c26fbf3d4496eb6b673b17bcae">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.0.2_3f73aa51435850d774d91dc2eebc8592f37b5905/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="829c6e46cb221c2102801221c648b77113743e81">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.0.2_acf762777efd182c17cfbed382b928b94ba37897/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -183,264 +30,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.0.2_cd6284857db9275f37b4b845da2e6aa933c2d39d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_f627f6917d43ca7c48adcfcb2519746bb9e73d49/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="c96952c162c9f6076f44c5939982cb35491442ea">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.0.2_c160c2bc492687b5c26084cd8c3a158af06965f8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="20e1a0f0de6276a5f36062b655f8b20f8cc00cc4">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.0.2_b5d6abe884df012b51634ec9daa6e423d4357f2b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="0c835e9f3875cf245877c9b17d1c69bc98f16057">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.0.2_54f821c866fbf6ebaed91b2da4a46e304aed899b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="f2774b1e02e5fbc524590311a744263c3b152d63">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.0.2_c6a1d724716f0fbce2baa0458841e5c2f232457f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_b43d741ffb2be9bc502d8aab8439220701715761/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="d9ea4cdaafa29ec4651d6e4715788d3fcaa7b913">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.0.2_bfbb7448ede34fa05b054890d8ed64ebd3f47bd1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="b3d0809a742c5f768c6aa9efc6decd5c1d6cd227">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.0.2_f2b35a7fce3bc567e9ed02efb5cb4a4180c31444/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="8c0fc9b1ea0bac0cb31d60c8b1bf2feb0518e3a9">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.0.2_ff5853a06c8780fc21a6e55fdcbd13d810439eff/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="cf16220db9128d91a215aedc739584181d5ca6a4">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.0.2_b13d6a8dedc8450fd75ed5161c0ef2f1a129d622/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="a45bc1ed812137b21dddd1cedaa3712b308f0b3f">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.0.2_f10fe3d0edd405b85fecebd1e622b3192ad43bc8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="44899c0f869c2bacc4ed133eca616a2e538e9b58">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_04adb4de38651c3ec3dff939c6ec333567226f5f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.3.0_41cfd4cff5cf72164f484b70145c8670a45f835e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="060a7157438a0b1b0706b99c430fb3ecbc5a79a4">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.0.2_1c9826502d65b908848dc99ec851d2bc9df1f1d9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.0.2_8a3477abe40a8d593df714246ac33cbea125aae6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="92a1d5f71b0fc8938f1d3f2e6ef984b52b894b4d">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.0.2_5d965fe81ff467dc5279b0f02bebfe9513687246/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="922c24fbfc4247947fcfaf2b95f295a16a8c3d17">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.0.2_7cfafd3d181b4f4277d76b37643360bae134ef57/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fe5b47e764869f1076cb9cfe12801ed2ef4e9117">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.0.2_988bbf811644ee24f3bec49547ff11c2c5ed90e0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="cd4c7c54e15d9ccbc448384fa2c4684d69ca73f0">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.0.2_df70b071d3d9e480ae870ebf394875bd7462af4f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.0.1_0aac78bb7d6c8808307f4db665dcb6e8fb58be8b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="6c58c14d15602fea2c50138c73bb107e8b832b62">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.0.2_415247c5558791e5cd541fff1f6273032845b162/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="bc156efaaee99f1ef6bf471347373a4cbb28e2a1">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.0.2_ec044632a9466d236cf56bfe254a69b89dc5b9db/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="604ecf403feb0084dc6d0c12f1677a490cf45e4c">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.0.2_fc25ecbae74e9a33e51fe3482112c8a94613fc93/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="79e298d7fed2fcada58da7032d07d34ee198a545">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.0.2_81173db402db2f1c618f5ae0a5c328ac1ec2b5e8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="b8e0372ca6dc89ac4fe22b76eeea4f68ece435b8">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.0.2_c04ac0da8e8ed998d16ade8a4d0421188344eeb7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.8.0_1b8efe234822bb0a3888508c6d4b40b54cf6df4f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="4ec890171a97b5ab98292f131aa784e0f3792c73">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.0.2_096b03f36495b9bdacd0a3a17ff523a13444ff41/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e6a957e7596f45bcd552f5fd30821be4bab2e8a2">
+        sha1="e0d7c8a7bf07e3d67beaa522151cace50350351b">
         <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_44a2f234bff728a9207066990c0a6b94de64fc87/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="af7582c6b327449c6d32518e6a10307860b7b5d6">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.6.1_9fd57d0b6eff03119b74ed64dcdda638db8d272a/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -453,12 +57,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.0-beta4/de5935a367ba5e343e9df786ac8fc0c7d52b5f0c/converter-gson-2.0.0-beta4.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="9819419ce8d79f3f81a0fc70f9345ac8c843af9c">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.0.2_b81de6ea04bb89403881a9623ea3b1f84ff3aa83/classes.dex" />
+        sha1="de5935a367ba5e343e9df786ac8fc0c7d52b5f0c">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.0-beta4_75ef0b2dc7ad32f553dc084672b23c3eca7e9d33/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -480,57 +84,66 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="51a11c41a08f099a204e1b8dcc04f27217de50ec">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.0.2_7daa246fdd6a72ccc302bee5d876eaea3de54c6c/classes.dex" />
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.0.1_0aac78bb7d6c8808307f4db665dcb6e8fb58be8b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="7e52b440a26498c56b4f263e215223b5451c955e">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.0.2_3111630e4ef585ca8064ba166a76f62264be8fb2/classes.dex" />
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_80936a5b5b39311f19983287a609485290184da7/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="d900f2a1ff098cac8befe6c023d723e9afb154be">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.0.2_74cb520ae96ba7d4f2534c866123713f1efd7b0e/classes.dex" />
+        sha1="0efd1b44f47c134fb245914a1d54a55adbfc2f8d">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.6.1_f5676917d290772e27e520fcdd06e2be0ca1a28c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_631beeb4dfbbfc6d27e9e057068c0d059de79eca/classes.dex" />
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_f627f6917d43ca7c48adcfcb2519746bb9e73d49/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.0.2_f49223d041f1d7c57ce8f67043bbf891c37a9188/classes.dex" />
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_aee7b674fd99be12f0e8bc3c32d66ec29dd1452e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_d992e6f8d173901f2e5b7b0af652d23da9dd58e9/classes.dex" />
+        sha1="a1c351dc10b92d638da57f3a6513f87cfbdc9f83">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.6.1_77a9ecc8a813f82bf917b9937d4505e37cfdf3d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_354db05163287b28dea904d5710ab893906055a9/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -543,12 +156,75 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1e14ebe1cda8491f152083e752ca5bf73cd37bff">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.6.1_34afd70d0d012cfbab1f00fe17a492611adff320/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_1f36900412fbfa700b73f3457b18fc80c0d0f4a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4a36600281a648769411ef642c331851732bf29e">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.6.1_4af9839ed7a651d8196a2b46177e7a21325166bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="62ff84124b89177abc0c27f3e38c9732f2d41617">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.6.1_78c33dbe3a1c8e08b84f3df40833f1e90d30b396/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_2e24cd962eb8f873342e2091b345162c19f350bd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="79f521967ad7f49b34748db89df02852c2b2f87b">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.6.1_f056b6ea74f99ed942215561a44d7a21b2d5d545/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/io.github.luizgrp.sectionedrecyclerviewadapter/sectionedrecyclerviewadapter/1.0.4/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="abc2d3b2a9e357adec2358cac04fda7af3ec9aef">
         <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.github.luizgrp.sectionedrecyclerviewadapter-sectionedrecyclerviewadapter-1.0.4_1db02109d3e1ce33a5bf3a69611786fca8a2f1c8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="284a5fa8801ebad25e41ab9f453c1fa304a9cdca">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_04adb4de38651c3ec3dff939c6ec333567226f5f/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -561,30 +237,30 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jar="/Users/mremondi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_9126a68749b2f6186a2d1be651505491708fe375/classes.dex" />
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.3.0_41cfd4cff5cf72164f484b70145c8670a45f835e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e11da70cff6a544a45cdc21f419802d9bb9043ac">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.0.2_88b36c9c8a5f04b8e0406c55e501deeceff5f4c5/classes.dex" />
+        sha1="eccaaa9ffa6bb4bfbd2e870f01aaf69655d353be">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.6.1_ab6aa4e8f1d1d3e2a1cd3a90a05e7152d4a02415/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.2/jars/classes.jar"
+        jar="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
-        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.0.2_a6c04d3948ab777339696087f10d586980588cfb/classes.dex" />
+        sha1="1ef72e72bc0d05602c366582afa9439f58bb31d6">
+        <dex dex="/Users/mremondi/Desktop/GIT/CraveAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.6.1_35ffdb4470350472a39a774b14e49b28be67d38f/classes.dex" />
     </item>
 
 </items>
