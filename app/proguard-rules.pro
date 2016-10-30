@@ -60,6 +60,11 @@
     @android.webkit.JavascriptInterface <methods>;
 }
 
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+}
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
 
 -keepclassmembers class ** {
 public void onEvent(*);
