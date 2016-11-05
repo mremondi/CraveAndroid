@@ -12,56 +12,63 @@
     app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="4dp">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        style="@style/RowStyle"
-        android:layout_height="wrap_content">
-
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tvSearchRowItemName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            style="@style/NormalTextThemeBold"
-            android:lines="1"
-            android:ellipsize="end"/>
+        android:layout_margin="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvSearchRowPrice"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/llSearchRow"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/ivSearchRowImage">
+            <TextView
+                android:id="@+id/tvSearchRowItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/NormalTextThemeBold"
+                android:lines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tvSearchRowItemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:ellipsize="end"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvSearchRowRating"
+                    android:background="@drawable/rating_bubble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    style="@style/RatingBubbleText"/>
+
+                <TextView
+                    android:id="@+id/tvSearchRowPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    style="@style/NormalTextThemeBold"/>
+
+            </LinearLayout>
+
+            <!--TODO: Should contain the distance from the user-->
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivSearchRowImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:paddingLeft="4dp"
-            style="@style/NormalTextThemeBold"/>
-
-        <TextView
-            android:id="@+id/tvSearchRowRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/tvSearchRowPrice"
-            style="@style/NormalTextThemeBold"/>
-
-        <!--TODO: Should contain the distance from the user-->
-
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"/>
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvSearchRowItemDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:ellipsize="end"/>
-
-    </LinearLayout>
-    </LinearLayout>
 </android.support.v7.widget.CardView>

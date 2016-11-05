@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#6e0d20</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="textColor">#000000</color>
+    <color name="textColorSecondary">#FFFFFF</color>
+
+    <color name="ratingBubbleGreen">#43a047</color>
+    <color name="ratingBubbleOrange">#fb8c00</color>
+    <color name="ratingBubbleRed">#bc1636</color>
 </resources>
 
 

@@ -1,6 +1,9 @@
 package com.cravings.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +72,21 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             tvSearchRowItemName.setText(item.getName());
             tvSearchItemDescription.setText(item.getDescription());
             tvSearchRowItemPrice.setText("$" + item.getPrice());
+            if (item.getRating() > 3.5) {
+                tvSearchRowItemRating.getBackground().setColorFilter(
+                        new PorterDuffColorFilter(context.getResources().getColor(R.color.ratingBubbleGreen),
+                                PorterDuff.Mode.SRC_ATOP));
+            }
+            else if (item.getRating() > 2.5 && Float.valueOf(item.getPrice()) <= 3.5){
+                tvSearchRowItemRating.getBackground().setColorFilter(
+                        new PorterDuffColorFilter(context.getResources().getColor(R.color.ratingBubbleOrange),
+                                PorterDuff.Mode.SRC_ATOP));
+            }
+            else{
+                tvSearchRowItemRating.getBackground().setColorFilter(
+                        new PorterDuffColorFilter(context.getResources().getColor(R.color.ratingBubbleRed),
+                                PorterDuff.Mode.SRC_ATOP));
+            }
             if (Float.isNaN(item.getRating() / item.getNumberOfRatings()) ){
                 tvSearchRowItemRating.setText("No Ratings");
             }
