@@ -3,13 +3,8 @@ package com.cravings.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
 import com.cravings.fragments.ItemSearchFragment;
 import com.cravings.fragments.RestaurantSearchFragment;
-
-/**
- * Created by mremondi on 10/18/16.
- */
 
 public class SearchPagerAdapter extends FragmentPagerAdapter {
 

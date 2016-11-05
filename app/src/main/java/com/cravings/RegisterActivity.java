@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         // set up retrofit
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         Button btnRegister = (Button) findViewById(R.id.btnRegisterRegister);
         if (btnRegister != null){

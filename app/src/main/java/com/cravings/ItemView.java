@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.data.MenuItem;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import com.roughike.bottombar.BottomBar;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,7 +48,7 @@ public class ItemView extends AppCompatActivity {
         itemID = intent.getStringExtra(ITEM_ID);
 
         // set up retrofit
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         Call<MenuItem> itemQuery = craveAPI.getItemById(itemID);
         itemQuery.enqueue(new Callback<MenuItem>() {

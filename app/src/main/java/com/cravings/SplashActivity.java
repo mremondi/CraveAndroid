@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
         ivSplash.startAnimation(imageViewAnim);
 
 
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         if (prefs.getBoolean(LoginActivity.LOGGED_IN, false)){
             Call<User> loginUser = craveAPI.loginUser(

@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.cravings.R;
 import com.cravings.data.Menu;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,7 +65,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
             */
 
             // set up retrofit
-            final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+            final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
             Call<Menu> menuCall = craveAPI.getMenuById(menu);
             menuCall.enqueue(new Callback<Menu>() {

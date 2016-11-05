@@ -20,7 +20,7 @@ import com.cravings.R;
 import com.cravings.adapters.SearchAdapter;
 import com.cravings.data.MenuItem;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import com.google.android.gms.maps.model.LatLng;
 import java.util.List;
 import retrofit2.Call;
@@ -65,7 +65,7 @@ public class ItemSearchFragment extends Fragment implements AdapterView.OnItemSe
         searchRecyclerView.setLayoutManager(linearLayoutManager);
 
         // set up retrofit
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         // set up views
         etSearch = (EditText) rootView.findViewById(R.id.etSearch);

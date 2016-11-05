@@ -13,7 +13,7 @@ import com.cravings.RestaurantView;
 import com.cravings.adapters.CraveLocationManager;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -74,7 +74,7 @@ public class NearMeFragment extends Fragment implements OnMapReadyCallback{
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(this.location, (float)12));
 
         // set up retrofit
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         Call<List<Restaurant>> restaurantQuery = craveAPI.getNearbyRestaurants(location.latitude,
                                                                                 location.longitude);

@@ -16,7 +16,7 @@ import com.cravings.R;
 import com.cravings.SplashActivity;
 import com.cravings.data.User;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +44,7 @@ public class ProfileFragment extends Fragment {
         final Button btnProfileLogOut = (Button) rootView.findViewById(R.id.btnProfileLogOut);
 
         // set up retrofit
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         /*********************Load Profile**********************/
 

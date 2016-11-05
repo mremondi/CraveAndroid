@@ -10,7 +10,7 @@ import com.cravings.R;
 import com.cravings.data.MenuItem;
 import com.cravings.data.Rating;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -75,7 +75,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
             tvFavoritesViewItemRating.setText(" " + rating.getRating());
 
             // set up retrofit
-            final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+            final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
             Call<MenuItem> itemQuery = craveAPI.getItemById(rating.getItemID());
             itemQuery.enqueue(new Callback<MenuItem>() {

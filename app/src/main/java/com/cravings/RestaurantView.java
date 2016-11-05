@@ -12,7 +12,7 @@ import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.adapters.MenuRecyclerViewAdapter;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import com.roughike.bottombar.BottomBar;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,7 +48,7 @@ public class RestaurantView extends AppCompatActivity {
         String restaurantID = intent.getStringExtra(RESTAURANT_ID);
 
         // set up retrofit
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         Call<Restaurant> restaurantQuery = craveAPI.getRestaurantById(restaurantID);
         restaurantQuery.enqueue(new Callback<Restaurant>() {

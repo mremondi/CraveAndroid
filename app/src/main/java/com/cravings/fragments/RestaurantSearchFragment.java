@@ -18,7 +18,7 @@ import com.cravings.RestaurantView;
 import com.cravings.adapters.SearchRestaurantAdapter;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.List;
@@ -47,7 +47,7 @@ public class RestaurantSearchFragment extends Fragment {
 
         location = ((SearchFragment) this.getParentFragment()).getLocation();
 
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         // set up recycler view
         final RecyclerView searchRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);

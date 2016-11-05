@@ -16,7 +16,7 @@ import com.cravings.R;
 import com.cravings.adapters.FavoritesAdapter;
 import com.cravings.data.Rating;
 import com.cravings.network.CraveAPI;
-import com.cravings.network.RetrofitConnection;
+import com.cravings.network.CraveConnection;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,7 +42,7 @@ public class FavoritesFragment extends Fragment {
         String user_id = prefs.getString(LoginActivity.USER_ID, "");
 
         // set up retrofit
-        final CraveAPI craveAPI = RetrofitConnection.setUpRetrofit();
+        final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
 
         Call<List<Rating>> ratingQuery = craveAPI.getUserFavorites(user_id);
         ratingQuery.enqueue(new Callback<List<Rating>>() {

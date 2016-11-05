@@ -14,6 +14,7 @@
         android:scaleX="7"
         android:scaleY="7"
         android:scaleType="fitCenter"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
