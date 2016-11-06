@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.cravings.MainActivity;
 import com.cravings.R;
 import com.cravings.fragments.FavoritesFragment;
+import com.cravings.fragments.MoreFragment;
 import com.cravings.fragments.NearMeFragment;
 import com.cravings.fragments.ProfileFragment;
 import com.cravings.fragments.SearchFragment;
@@ -39,8 +40,8 @@ public class BottomBarAdapter {
             else if (tag.equals(NearMeFragment.TAG)) {
                 fragment = new NearMeFragment();
             }
-            else if (tag.equals(ProfileFragment.TAG)) {
-                fragment = new ProfileFragment();
+            else if (tag.equals(MoreFragment.TAG)) {
+                fragment = new MoreFragment();
             }
         }
 
@@ -66,8 +67,8 @@ public class BottomBarAdapter {
                 else if (menuItemId == R.id.nav_bar_favorites) {
                     showFragment(FavoritesFragment.TAG);
                 }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    showFragment(ProfileFragment.TAG);
+                else if (menuItemId == R.id.nav_bar_more) {
+                    showFragment(MoreFragment.TAG);
                 }
             }
 
@@ -82,8 +83,8 @@ public class BottomBarAdapter {
                 else if (menuItemId == R.id.nav_bar_favorites) {
                     showFragment(FavoritesFragment.TAG);
                 }
-                else if (menuItemId == R.id.nav_bar_profile) {
-                    showFragment(ProfileFragment.TAG);
+                else if (menuItemId == R.id.nav_bar_more) {
+                    showFragment(MoreFragment.TAG);
                 }
             }
         });
@@ -110,9 +111,9 @@ public class BottomBarAdapter {
                     i.putExtra(MainActivity.FRAGMENT_TAG, FavoritesFragment.TAG);
                     activity.startActivity(i);
                 }
-                else if (menuItemId == R.id.nav_bar_profile) {
+                else if (menuItemId == R.id.nav_bar_more) {
                     Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
-                    i.putExtra(MainActivity.FRAGMENT_TAG, ProfileFragment.TAG);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, MoreFragment.TAG);
                     activity.startActivity(i);
                 }
             }
@@ -134,9 +135,9 @@ public class BottomBarAdapter {
                     i.putExtra(MainActivity.FRAGMENT_TAG, FavoritesFragment.TAG);
                     activity.startActivity(i);
                 }
-                else if (menuItemId == R.id.nav_bar_profile) {
+                else if (menuItemId == R.id.nav_bar_more) {
                     Intent i = new Intent(activity.getApplicationContext(), MainActivity.class);
-                    i.putExtra(MainActivity.FRAGMENT_TAG, ProfileFragment.TAG);
+                    i.putExtra(MainActivity.FRAGMENT_TAG, MoreFragment.TAG);
                     activity.startActivity(i);
                 }
             }

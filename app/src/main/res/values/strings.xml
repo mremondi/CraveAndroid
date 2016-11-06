@@ -29,6 +29,9 @@
     <string name="searchview_restaurantSearch">Restaurant Search</string>
     <string name="item_search">Item Search</string>
     <string name="restaurant_search">Restaurant Search</string>
+    <string name="bb_more">More</string>
+    <string name="dev_email">Support mikeremondi@gmail.com</string>
+    <string name="dev_name">Michael Remondi 2016</string>
 
     <string-array name="filter_choices">
         <item>Price: Low -> High</item>
