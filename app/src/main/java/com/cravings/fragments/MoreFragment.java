@@ -3,7 +3,6 @@ package com.cravings.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,19 +31,6 @@ public class MoreFragment extends Fragment {
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.main_frame_content, nextFrag, ProfileFragment.TAG)
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
-
-        TextView tvContactUs = (TextView) rootView.findViewById(R.id.tvContactUs);
-        tvContactUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ContactUsFragment nextFrag= new ContactUsFragment();
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.main_frame_content, nextFrag, ContactUsFragment.TAG)
                         .addToBackStack(null)
                         .commit();
             }

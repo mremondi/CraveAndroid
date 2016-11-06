@@ -13,33 +13,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/TitleTheme"
-        android:text="More"
+        android:text="@string/more_title"
         android:layout_gravity="center"
         android:textAlignment="center"/>
-
 
     <TextView
         android:id="@+id/tvProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:text="@string/more_my_profile"
         style="@style/NormalTextTheme"
-        android:drawableRight="@drawable/ic_person_outline_primary_24dp"/>
-
-    <TextView
-        android:id="@+id/tvContactUs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contact Us"
-        style="@style/NormalTextTheme"
-        android:drawableRight="@drawable/ic_info_outline_black_24dp"/>
+        android:drawableRight="@drawable/ic_person_outline_primary_24dp"
+        android:drawableEnd="@drawable/ic_person_outline_primary_24dp"/>
 
     <TextView
         android:id="@+id/tvAboutUs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About Us"
+        android:text="@string/more_about_us"
         style="@style/NormalTextTheme"
-        android:drawableRight="@drawable/ic_mail_outline_primary_24dp"/>
+        android:drawableRight="@drawable/ic_info_outline_black_24dp"
+        android:drawableEnd="@drawable/ic_info_outline_black_24dp"/>
 
 </LinearLayout>

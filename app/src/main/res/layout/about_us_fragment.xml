@@ -8,9 +8,9 @@
         android:id="@+id/tvAboutAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        style="@style/NormalTextThemeBold"
-        android:layout_centerInParent="true" />
+        style="@style/AboutTitleTheme"
+        android:layout_centerInParent="true"
+        android:text="@string/splash_title"/>
 
     <TextView
         android:id="@+id/tvAboutAuthorName"
@@ -20,5 +20,18 @@
         style="@style/NormalTextThemeBold"
         android:layout_below="@+id/tvAboutAppName"
         android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/tvContactUsEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAboutAuthorName"
+        android:layout_centerInParent="true"
+        android:text="@string/dev_email"
+        android:linksClickable="true"
+        android:clickable="true"
+        android:textColorLink="@color/colorPrimary"
+        style="@style/NormalTextThemeBold"
+        android:autoLink="email" />
 
 </RelativeLayout>
