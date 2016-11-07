@@ -63,7 +63,6 @@ public class RestaurantSearchFragment extends Fragment {
                 if (etSearch.getText().toString().equals("")) {
                     return;
                 }
-                // TODO: Make it searchable by restaurant cuisine tag AND name. This needs to be done server side
                 // TODO: LOCATION FILTERED SEARCH
                 Call<List<Restaurant>> restaurantQuery = craveAPI.searchRestaurants(etSearch.getText().toString());
                 restaurantQuery.enqueue(new Callback<List<Restaurant>>() {
