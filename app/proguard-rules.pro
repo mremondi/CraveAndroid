@@ -35,6 +35,8 @@
     public void set*(...);
 }
 
+-keep public class * extends android.support.v4.app.FragmentPagerAdapter
+
 -keepclasseswithmembers class * {
     public <init>(android.content.Context, android.util.AttributeSet);
 }

@@ -20,8 +20,6 @@ import org.greenrobot.eventbus.Subscribe;
 public class SearchFragment extends Fragment {
     public static final String TAG = "SearchFragment";
 
-    private boolean searchItems = true;
-
     private CraveLocationManager craveLocationManager;
     private LatLng location;
 
@@ -33,11 +31,13 @@ public class SearchFragment extends Fragment {
         craveLocationManager = new CraveLocationManager(this.getContext());
         location = craveLocationManager.getLastKnownLocation();
 
+        ViewPager mViewPager = (ViewPager) rootView.findViewById(R.id.searchViewPager);
+        mViewPager.setAdapter(new SearchPagerAdapter(getChildFragmentManager()));
+
         PagerTabStrip pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pagerTabStrip);
         pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.colorPrimary));
 
-        ViewPager mViewPager = (ViewPager) rootView.findViewById(R.id.searchViewPager);
-        mViewPager.setAdapter(new SearchPagerAdapter(getChildFragmentManager()));
+        ((ViewPager.LayoutParams) pagerTabStrip.getLayoutParams()).isDecor = true;
 
         return rootView;
     }

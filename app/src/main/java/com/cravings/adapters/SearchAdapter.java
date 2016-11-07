@@ -1,7 +1,6 @@
 package com.cravings.adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.support.v7.widget.RecyclerView;
@@ -33,7 +32,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     @Override
     public SearchAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_row, parent, false);
+        View rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row, parent, false);
         return new ViewHolder(rowView, context);
     }
 
@@ -57,10 +56,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         public ViewHolder(View itemView, Context context) {
             super(itemView);
-            tvSearchRowItemName = (TextView) itemView.findViewById(R.id.tvSearchRowItemName);
-            tvSearchRowItemPrice = (TextView) itemView.findViewById(R.id.tvSearchRowPrice);
-            tvSearchRowItemRating = (TextView) itemView.findViewById(R.id.tvSearchRowRating);
-            tvSearchItemDescription = (TextView) itemView.findViewById(R.id.tvSearchRowItemDescription);
+            tvSearchRowItemName = (TextView) itemView.findViewById(R.id.tvItemRowItemName);
+            tvSearchRowItemPrice = (TextView) itemView.findViewById(R.id.tvItemRowPrice);
+            tvSearchRowItemRating = (TextView) itemView.findViewById(R.id.tvItemRowRating);
+            tvSearchItemDescription = (TextView) itemView.findViewById(R.id.tvItemRowItemDescription);
             this.context = context;
         }
 

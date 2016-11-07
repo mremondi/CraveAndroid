@@ -13,11 +13,19 @@
     card_view:cardElevation="4dp"
     app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="4dp">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+
+    <!-- IDEALLY:
+        Restaurant Name
+        Description
+        Cuisines?
+        Distance from the User
+        Logo
+    -->
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
         style="@style/RowStyle"
         android:background="#FFFFFF">
 
@@ -25,9 +33,15 @@
             android:id="@+id/tvSearchViewRestName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/NormalTextThemeBold"/>
+            style="@style/NormalTextThemeBold"
+            android:layout_alignParentLeft="true"/>
 
-        <!--TODO: Should contain the distance from the user-->
+        <ImageView
+            android:id="@+id/ivRestaurantRowLogo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentRight="true"/>
 
-    </LinearLayout>
+
+    </RelativeLayout>
 </android.support.v7.widget.CardView>

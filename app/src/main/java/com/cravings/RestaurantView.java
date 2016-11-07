@@ -88,8 +88,6 @@ public class RestaurantView extends AppCompatActivity implements GoogleApiClient
                         }
                     });
                     tvRestViewURL.setText("" + response.body().getRestaurant_URL());
-
-                    Log.d("PHONE NUMBER", "" + response.body().getPhone_number());
                     tvRestViewPhone.setText("" + response.body().getPhone_number());
 
                     MenuRecyclerViewAdapter searchAdapter = new MenuRecyclerViewAdapter(

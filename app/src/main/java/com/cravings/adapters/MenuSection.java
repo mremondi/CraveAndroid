@@ -22,7 +22,7 @@ public class MenuSection extends StatelessSection {
     String title;
 
     public MenuSection(String title, List<MenuItem> list, OnItemClickListener listener){
-        super(R.layout.menu_section_header, R.layout.menu_item_row);
+        super(R.layout.menu_section_header, R.layout.item_row);
         this.title = title;
         this.items = list;
         this.listener = listener;
@@ -41,7 +41,8 @@ public class MenuSection extends StatelessSection {
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, final int position) {
         SectionItemViewHolder sectionItemViewHolder = (SectionItemViewHolder) holder;
         sectionItemViewHolder.tvMenuItemName.setText(items.get(position).getName());
-        sectionItemViewHolder.tvMenuItemPrice.setText(items.get(position).getPrice());
+        sectionItemViewHolder.tvItemRowDescritpion.setVisibility(View.INVISIBLE);
+        sectionItemViewHolder.tvMenuItemPrice.setText("$" + items.get(position).getPrice());
         sectionItemViewHolder.tvMenuItemRating.setText("" + Math.round(items.get(position).getRating()
                 / items.get(position).getNumberOfRatings() * 10.0)/10.0);
         sectionItemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -66,14 +67,16 @@ public class MenuSection extends StatelessSection {
 
     public static class SectionItemViewHolder extends RecyclerView.ViewHolder{
         private final TextView tvMenuItemName;
+        private final TextView tvItemRowDescritpion;
         private final TextView tvMenuItemPrice;
         private final TextView tvMenuItemRating;
 
         public SectionItemViewHolder(View itemView) {
             super(itemView);
-            tvMenuItemName = (TextView) itemView.findViewById(R.id.tvMenuViewItemName);
-            tvMenuItemPrice = (TextView) itemView.findViewById(R.id.tvMenuViewItemPrice);
-            tvMenuItemRating = (TextView) itemView.findViewById(R.id.tvMenuViewItemRating);
+            tvMenuItemName = (TextView) itemView.findViewById(R.id.tvItemRowItemName);
+            tvItemRowDescritpion = (TextView) itemView.findViewById(R.id.tvItemRowItemDescription);
+            tvMenuItemPrice = (TextView) itemView.findViewById(R.id.tvItemRowPrice);
+            tvMenuItemRating = (TextView) itemView.findViewById(R.id.tvItemRowRating);
         }
     }
 

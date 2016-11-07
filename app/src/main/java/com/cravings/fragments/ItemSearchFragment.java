@@ -27,10 +27,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by mremondi on 10/18/16.
- */
-
 public class ItemSearchFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     public static final String TITLE = "Item Search";
 
@@ -40,8 +36,6 @@ public class ItemSearchFragment extends Fragment implements AdapterView.OnItemSe
 
     private EditText etSearch;
     private Button btnSearch;
-    private TextView tvSearchFragmentTitle;
-
 
     @Nullable
     @Override

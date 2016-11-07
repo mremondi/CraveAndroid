@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardBackgroundColor="#FFFFFF"
-    android:layout_margin="4dp"
+    android:layout_margin="2dp"
     card_view:cardElevation="4dp"
     app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="4dp">
@@ -18,13 +18,13 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/llSearchRow"
+            android:id="@+id/llItemRow"
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/ivSearchRowImage">
+            android:layout_toLeftOf="@+id/ivItemRowImage">
             <TextView
-                android:id="@+id/tvSearchRowItemName"
+                android:id="@+id/tvItemRowItemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/NormalTextThemeBold"
@@ -32,7 +32,7 @@
                 android:ellipsize="end"/>
 
             <TextView
-                android:id="@+id/tvSearchRowItemDescription"
+                android:id="@+id/tvItemRowItemDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/tvSearchRowRating"
+                    android:id="@+id/tvItemRowRating"
                     android:background="@drawable/rating_bubble"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                     style="@style/RatingBubbleText"/>
 
                 <TextView
-                    android:id="@+id/tvSearchRowPrice"
+                    android:id="@+id/tvItemRowPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="4dp"
@@ -63,7 +63,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/ivSearchRowImage"
+            android:id="@+id/ivItemRowImage"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"

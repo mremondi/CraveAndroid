@@ -35,7 +35,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
 
     @Override
     public FavoritesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.favorite_row, parent, false);
+        View rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row, parent, false);
         return new ViewHolder(rowView, context);
     }
 
@@ -55,14 +55,12 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
         private TextView tvFavoritesViewItemName;
         private TextView tvFavoritesViewItemRating;
         private TextView tvFavoritesViewItemPrice;
-        private TextView tvFavoritesViewRestaurantName;
 
         public ViewHolder(View restaurantView, Context context) {
             super(restaurantView);
-            tvFavoritesViewItemName = (TextView) restaurantView.findViewById(R.id.tvFavoritesViewItemName);
-            tvFavoritesViewItemRating = (TextView) restaurantView.findViewById(R.id.tvFavoritesViewItemRating);
-            tvFavoritesViewItemPrice = (TextView) restaurantView.findViewById(R.id.tvFavoritesViewItemPrice);
-            tvFavoritesViewRestaurantName = (TextView) restaurantView.findViewById(R.id.tvFavoritesViewRestaurantName);
+            tvFavoritesViewItemName = (TextView) restaurantView.findViewById(R.id.tvItemRowItemName);
+            tvFavoritesViewItemRating = (TextView) restaurantView.findViewById(R.id.tvItemRowRating);
+            tvFavoritesViewItemPrice = (TextView) restaurantView.findViewById(R.id.tvItemRowPrice);
             this.context = context;
         }
 
@@ -72,7 +70,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
                 TRY TO UN-NEST SOMEDAY. ESPECIALLY IF IT IS SLOW ONCE MY SERVER IS NOT LOCAL
             */
 
-            tvFavoritesViewItemRating.setText(" " + rating.getRating());
+            tvFavoritesViewItemRating.setText("" + rating.getRating());
 
             // set up retrofit
             final CraveAPI craveAPI = CraveConnection.setUpRetrofit();
@@ -83,7 +81,6 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
                 public void onResponse(Call<MenuItem> call, Response<MenuItem> response) {
                     tvFavoritesViewItemName.setText(response.body().getName());
                     tvFavoritesViewItemPrice.setText("$" + response.body().getPrice());
-                    tvFavoritesViewRestaurantName.setText(response.body().getRestaurant_name());
                     itemView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
