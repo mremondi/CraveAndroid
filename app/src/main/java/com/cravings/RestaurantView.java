@@ -2,23 +2,30 @@ package com.cravings;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.cravings.adapters.BottomBarAdapter;
 import com.cravings.adapters.MenuRecyclerViewAdapter;
 import com.cravings.data.Restaurant;
 import com.cravings.network.CraveAPI;
 import com.cravings.network.CraveConnection;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.roughike.bottombar.BottomBar;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RestaurantView extends AppCompatActivity {
+public class RestaurantView extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
     public static final String RESTAURANT_ID = "RESTAURANT ID";
 
@@ -30,19 +37,23 @@ public class RestaurantView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_view);
 
+
         mBottomBar = BottomBar.attach(this, savedInstanceState);
         this.bottomBarAdapter = new BottomBarAdapter(mBottomBar, this);
         this.bottomBarAdapter.setUpBottomBar();
 
-        final TextView tvRestViewRestaurantName = (TextView) findViewById(R.id.tvRestViewRestaurantName);
+        final ImageView ivRestViewLogo = (ImageView) findViewById(R.id.ivRestViewLogo);
         final TextView tvRestViewTags = (TextView) findViewById(R.id.tvRestViewTags);
         final TextView tvRestViewAddress = (TextView) findViewById(R.id.tvRestViewAddress);
         final TextView tvRestViewURL = (TextView) findViewById(R.id.tvRestViewURL);
+        final TextView tvRestViewPhone = (TextView) findViewById(R.id.tvRestViewPhone);
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewRestView);
         recyclerView.setHasFixedSize(true);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        final AppCompatActivity activity = this;
 
         Intent intent = getIntent();
         String restaurantID = intent.getStringExtra(RESTAURANT_ID);
@@ -56,7 +67,7 @@ public class RestaurantView extends AppCompatActivity {
             public void onResponse(Call<Restaurant> call, final Response<Restaurant> response) {
                 if (response.body() == null) {}
                 else {
-                    tvRestViewRestaurantName.setText("" + response.body().getRestaurantName());
+                    Glide.with(activity).load(response.body().getRestaurant_logo_URL()).into(ivRestViewLogo);
                     for (String tag : response.body().getTags()){
                         tvRestViewTags.setText(tag + "\n");
                     }
@@ -77,6 +88,9 @@ public class RestaurantView extends AppCompatActivity {
                         }
                     });
                     tvRestViewURL.setText("" + response.body().getRestaurant_URL());
+
+                    Log.d("PHONE NUMBER", "" + response.body().getPhone_number());
+                    tvRestViewPhone.setText("" + response.body().getPhone_number());
 
                     MenuRecyclerViewAdapter searchAdapter = new MenuRecyclerViewAdapter(
                             response.body().getMenus(), getApplicationContext(),
@@ -103,5 +117,10 @@ public class RestaurantView extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         mBottomBar.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }

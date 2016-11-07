@@ -1,108 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cravings.RestaurantView">
+    android:layout_height="match_parent">
 
-    <!--
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.cravings.RestaurantView">
 
-    What needs to be on the restaurant view page:
-        Map View (top look at restaurant view of VURB)
-        Restaurant Name (bold biggest text on the screen, overlayed on map ideally)
-        Menu recyclerview (clickable on all of them, bold big text) -> Menu View
-        Tags (not clickable) not bold small text
-        Overall rating (not clickable)
-        Address
-        Website URL
-        Price (in $$/$$$$)
-    -->
+        <!--
 
-    <TextView
-        android:id="@+id/tvRestViewRestaurantName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        style="@style/TitleTheme" />
+        What needs to be on the restaurant view page:
+            Map View (top look at restaurant view of VURB)
+            Restaurant Name (bold biggest text on the screen, overlayed on map ideally)
+            Menu recyclerview (clickable on all of them, bold big text) -> Menu View
+            Tags (not clickable) not bold small text
+            Overall rating (not clickable)
+            Address
+            Website URL
+            Price (in $$/$$$$)
+        -->
 
-    <TextView
-        android:id="@+id/tvRestViewMenuNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/NormalTextThemeBold"
-        android:layout_below="@+id/tvRestViewRestaurantName"
-        android:text="MENUS:"/>
 
-    <LinearLayout
-        android:id="@+id/rv_container"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/tvRestViewMenuNameLabel">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerViewRestView"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/ivRestViewLogo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical" />
-
-    </LinearLayout>
+            android:layout_centerHorizontal="true"/>
 
 
-    <TextView
-        android:id="@+id/tvRestViewTagsLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rv_container"
-        style="@style/NormalTextThemeBold"
-        android:text="Cuisine Tags"/>
-    <TextView
-        android:id="@+id/tvRestViewTags"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvRestViewTagsLabel"/>
+        <TextView
+            android:id="@+id/tvRestViewMenuNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/NormalTextThemeBold"
+            android:layout_below="@+id/ivRestViewLogo"
+            android:text="Menus:"/>
 
-    <!--<RatingBar-->
+        <LinearLayout
+            android:id="@+id/rv_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/tvRestViewMenuNameLabel">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewRestView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvRestViewTagsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_container"
+            style="@style/NormalTextThemeBold"
+            android:text="Cuisine Tags"/>
+        <TextView
+            android:id="@+id/tvRestViewTags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRestViewTagsLabel"/>
+
+        <!--<RatingBar-->
         <!--android:id="@+id/rbRestViewRating"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_below="@+id/tvRestViewTags"/>-->
 
-    <!--
-    TODO: We want this eventually but first we must be able to get the average
-    price from the database and compare this to that then use a dollar sign as the
-    stars
-    <RatingBar-->
+        <!--
+        TODO: We want this eventually but first we must be able to get the average
+        price from the database and compare this to that then use a dollar sign as the
+        stars
+        <RatingBar-->
         <!--android:id="@+id/rbRestViewPrice"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_below="@id/rbRestViewRating"/>-->
 
-    <TextView
-        android:id="@+id/tvRestViewAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRestViewTags"
-        android:text="Get Directions"
-        android:drawableRight="@drawable/ic_directions_black_24dp"
-        android:layout_marginBottom="4dp"
-        android:paddingBottom="4dp"
-        style="@style/NormalTextTheme"/>
+        <TextView
+            android:id="@+id/tvRestViewAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvRestViewTags"
+            android:text="Get Directions"
+            android:drawableRight="@drawable/ic_directions_black_24dp"
+            android:drawableEnd="@drawable/ic_directions_black_24dp"
+            android:layout_marginBottom="4dp"
+            android:paddingBottom="4dp"
+            style="@style/NormalTextTheme"/>
 
-    <TextView
-        android:id="@+id/tvRestViewURL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvRestViewAddress"
-        android:textColorLink="@color/colorPrimary"
-        android:layout_marginBottom="4dp"
-        android:paddingBottom="4dp"
-        android:autoLink="web"
-        style="@style/NormalTextTheme"
-        android:drawableRight="@drawable/ic_launch_black_24dp"/>
+        <TextView
+            android:id="@+id/tvRestViewPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvRestViewAddress"
+            android:drawableRight="@drawable/ic_phone_black_24dp"
+            android:drawableEnd="@drawable/ic_phone_black_24dp"
+            android:autoLink="phone"
+            android:textColorLink="@color/textColor"
+            android:layout_marginBottom="4dp"
+            android:paddingBottom="4dp"
+            style="@style/NormalTextTheme"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvRestViewURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRestViewPhone"
+            android:textColorLink="@color/textColor"
+            android:layout_marginBottom="4dp"
+            android:paddingBottom="4dp"
+            android:autoLink="web"
+            style="@style/NormalTextTheme"
+            android:drawableRight="@drawable/ic_launch_black_24dp"
+            android:drawableEnd="@drawable/ic_launch_black_24dp"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>
+

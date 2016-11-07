@@ -13,6 +13,8 @@ public class Restaurant extends ModelObject{
     private String[] tags;
     private String[] menus;
     private String restaurant_URL;
+    private String restaurant_logo_URL;
+    private String phone_number;
 
     public Loc getLoc() {
         return loc;
@@ -86,5 +88,23 @@ public class Restaurant extends ModelObject{
     public void setMenus(String[] menus) {
         this.menus = menus;
     }
+
+
+    public String getRestaurant_logo_URL() {
+        return restaurant_logo_URL;
+    }
+
+    public void setRestaurant_logo_URL(String restaurant_logo_URL) {
+        this.restaurant_logo_URL = restaurant_logo_URL;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
 }
 
