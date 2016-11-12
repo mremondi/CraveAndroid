@@ -19,7 +19,7 @@
     <string name="profile_btnLogOut">Log Out</string>
     <string name="itemview_description">Description:</string>
     <string name="itemview_dietaryInfo">Dietary Information:</string>
-    <string name="favorites_cravings">Your Cravings</string>
+    <string name="favorites_cravings">Previous Ratings</string>
     <string name="bb_featured">Featured</string>
     <string name="bb_near_me">Near Me</string>
     <string name="bb_search">Search</string>

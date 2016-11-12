@@ -10,6 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Full Name"
         android:layout_marginTop="8dp"
         style="@style/ProfileEditTextStyle"/>
 
@@ -18,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etProfileName"
+        android:hint="Email"
         style="@style/ProfileEditTextStyle"
         android:inputType="textEmailAddress"/>
 

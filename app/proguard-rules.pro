@@ -107,4 +107,3 @@ public void onEvent(*);
   **[] $VALUES;
   public *;
 }
--keepresourcexmlelements manifest/application/meta-data@value=GlideModule
